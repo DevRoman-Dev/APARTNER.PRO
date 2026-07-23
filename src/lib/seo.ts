@@ -18,8 +18,7 @@ const localeTag: Record<Locale, string> = {
   uk: "uk-UA",
   ru: "ru-RU",
 };
-
-const BASE_URL = "https://studio.apartner.pro";
+import { BASE_URL } from "./config";
 
 export function pageHead(m: PageMeta) {
   const fullTitle = m.title.includes(SITE) ? m.title : `${m.title} — ${SITE}`;

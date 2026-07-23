@@ -2,8 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import type {} from "@tanstack/react-start";
 import { LOCALES, localePath } from "@/lib/i18n";
 import { SERVICES, POSTS } from "@/lib/content";
-
-const BASE_URL = "https://studio.apartner.pro";
+import { BASE_URL } from "@/lib/config";
 
 const staticPaths = ["/", "/services", "/portfolio", "/blog", "/about", "/contact"];
 
