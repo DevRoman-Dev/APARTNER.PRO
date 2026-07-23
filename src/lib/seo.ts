@@ -19,9 +19,11 @@ const localeTag: Record<Locale, string> = {
   ru: "ru-RU",
 };
 
+const BASE_URL = "https://studio.apartner.pro";
+
 export function pageHead(m: PageMeta) {
   const fullTitle = m.title.includes(SITE) ? m.title : `${m.title} — ${SITE}`;
-  const canonical = localePath(m.locale, m.path);
+  const canonical = `${BASE_URL}${localePath(m.locale, m.path)}`;
   const meta: Array<Record<string, string>> = [
     { title: fullTitle },
     { name: "description", content: m.description },
@@ -35,8 +37,9 @@ export function pageHead(m: PageMeta) {
     { name: "twitter:description", content: m.description },
   ];
   if (m.ogImage) {
-    meta.push({ property: "og:image", content: m.ogImage });
-    meta.push({ name: "twitter:image", content: m.ogImage });
+    const ogImgUrl = m.ogImage.startsWith("http") ? m.ogImage : `${BASE_URL}${m.ogImage}`;
+    meta.push({ property: "og:image", content: ogImgUrl });
+    meta.push({ name: "twitter:image", content: ogImgUrl });
   }
   if (m.noIndex) meta.push({ name: "robots", content: "noindex,nofollow" });
 
@@ -45,9 +48,9 @@ export function pageHead(m: PageMeta) {
     ...LOCALES.map((l) => ({
       rel: "alternate",
       hrefLang: localeTag[l],
-      href: localePath(l, m.path),
+      href: `${BASE_URL}${localePath(l, m.path)}`,
     })),
-    { rel: "alternate", hrefLang: "x-default", href: localePath("en", m.path) },
+    { rel: "alternate", hrefLang: "x-default", href: `${BASE_URL}${localePath("en", m.path)}` },
   ];
 
   return { meta, links };
