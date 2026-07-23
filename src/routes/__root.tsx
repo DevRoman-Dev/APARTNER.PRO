@@ -89,7 +89,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-400-normal.woff2", crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-500-normal.woff2", crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-700-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-800-normal.woff2", crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-400-normal.woff2", crossOrigin: "anonymous" },
+      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-500-normal.woff2", crossOrigin: "anonymous" },
       ...(import.meta.env.DEV ? [{ rel: "stylesheet", href: appCssUrl }] : []),
     ],
   }),
