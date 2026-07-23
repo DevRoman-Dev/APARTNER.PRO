@@ -7,7 +7,7 @@ export function BlogPage({ locale }: { locale: Locale }) {
   const fmt = (d: string) =>
     new Date(d).toLocaleDateString(
       locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU",
-      { year: "numeric", month: "long", day: "numeric" },
+      { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" },
     );
   const [featured, ...rest] = POSTS;
   return (

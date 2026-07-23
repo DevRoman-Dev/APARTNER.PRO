@@ -35,7 +35,7 @@ export function BlogPostPage({ locale, post }: { locale: Locale; post: BlogPost 
   const fmt = (d: string) =>
     new Date(d).toLocaleDateString(
       locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU",
-      { year: "numeric", month: "long", day: "numeric" },
+      { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" },
     );
   const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
   return (

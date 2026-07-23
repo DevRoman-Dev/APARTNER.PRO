@@ -193,7 +193,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 >
                   <div className="flex gap-4 sm:gap-8 items-center min-w-0">
                     <span className="font-mono text-[10px] text-muted-foreground shrink-0 hidden sm:inline">
-                      {new Date(p.date).toLocaleDateString(locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU", { month: "short", day: "numeric" }).toUpperCase()}
+                      {new Date(p.date).toLocaleDateString(locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU", { month: "short", day: "numeric", timeZone: "UTC" }).toUpperCase()}
                     </span>
                     <h4 className="text-base sm:text-lg font-bold group-hover:text-accent transition-colors break-words line-clamp-2">
                       {p.title[locale]}
