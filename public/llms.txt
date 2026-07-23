@@ -9,6 +9,25 @@ We are an agency specializing in complex technical solutions for medium to large
 - **Backend**: Laravel, Symfony, Node.js
 - **E-commerce**: PrestaShop, Shopify, WooCommerce (headless and monolith)
 
+## Our Services
+- **Laravel & CakePHP Development**: https://studio.apartner.pro/services/laravel-development
+- **PrestaShop Development**: https://studio.apartner.pro/services/prestashop-development
+- **WordPress & WooCommerce**: https://studio.apartner.pro/services/wordpress-development
+- **Mobile Apps (iOS & Android)**: https://studio.apartner.pro/services/mobile-apps
+- **UX/UI Design & Branding**: https://studio.apartner.pro/services/ux-ui-design
+- **Technical SEO & Performance**: https://studio.apartner.pro/services/seo-performance
+
+
+## Posts
+- **Why Website Builders Kill Your Marketing**: https://studio.apartner.pro/blog/website-builders-vs-laravel
+- **Mobile Optimization E-commerce**: https://studio.apartner.pro/blog/mobile-optimization-ecommerce
+- **Laravel vs Symfony**: https://studio.apartner.pro/blog/laravel-vs-symfony
+- **PrestaShop to Headless Migration**: https://studio.apartner.pro/blog/prestashop-to-headless-migration
+- **Core Web Vitals**: https://studio.apartner.pro/blog/core-web-vitals
+- **WordPress Headless with TanStack**: https://studio.apartner.pro/blog/wordpress-headless-with-tanstack
+- **E-commerce Conversion Checklist**: https://studio.apartner.pro/blog/ecommerce-conversion-checklist
+- **PrestaShop vs Shopify**: https://studio.apartner.pro/blog/why-choose-prestashop-over-shopify
+
 ## Key Pages
 - **Home**: https://studio.apartner.pro/
 - **Services**: https://studio.apartner.pro/services
