@@ -1,0 +1,25 @@
+# APARTNER.PRO
+
+> B2B E-commerce & SaaS Development Agency
+
+We are an agency specializing in complex technical solutions for medium to large businesses, focusing on e-commerce, SaaS, and custom web applications. We prioritize modern architecture, high performance (Core Web Vitals), and scalable infrastructure.
+
+## Technologies we use
+- **Frontend**: React, Next.js, Vue, Nuxt, TanStack Router/Start
+- **Backend**: Laravel, Symfony, Node.js
+- **E-commerce**: PrestaShop, Shopify, WooCommerce (headless and monolith)
+
+## Key Pages
+- **Home**: https://studio.apartner.pro/
+- **Services**: https://studio.apartner.pro/services
+- **Portfolio**: https://studio.apartner.pro/portfolio
+- **Blog**: https://studio.apartner.pro/blog
+- **Contact**: https://studio.apartner.pro/contact
+
+## Site Map
+You can find all dynamic URLs, including our localized content (English, Ukrainian, Russian), in our XML sitemap:
+https://studio.apartner.pro/sitemap.xml
+
+## Contact Information
+- **Email**: info@apartner.pro
+- **Phone**: +380 93 88 00 822
