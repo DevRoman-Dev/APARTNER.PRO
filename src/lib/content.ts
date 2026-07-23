@@ -1,8 +1,8 @@
 import type { Locale } from "./i18n";
-import fintechxImg from "@/assets/portfolio/fintechx.io.png";
-import luxeBoutiqueImg from "@/assets/portfolio/luxeboutique.com.png";
-import archstudioImg from "@/assets/portfolio/archstudio.ua.png";
-import medconnectImg from "@/assets/portfolio/medconnect.health.png";
+import fintechxImg from "@/assets/portfolio/fintechx.io.webp";
+import luxeBoutiqueImg from "@/assets/portfolio/luxeboutique.com.webp";
+import archstudioImg from "@/assets/portfolio/archstudio.ua.webp";
+import medconnectImg from "@/assets/portfolio/medconnect.health.webp";
 import laravelSymfonyImg from "@/assets/blog/laravel-symfony.jpg";
 import prestashopHeadlessImg from "@/assets/blog/prestashop-headless.jpg";
 import coreWebVitalsImg from "@/assets/blog/core-web-vitals.jpg";
