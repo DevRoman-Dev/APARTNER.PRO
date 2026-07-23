@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       logo: `${BASE_URL}/icon.svg`,
       email: "info@apartner.pro",
       telephone: "+380938800822",
-      sameAs: ["https://www.linkedin.com/company/apartner-pro"],
+      sameAs: ["https://www.linkedin.com/company/apartner/"],
     },
   }),
   component: () => (
