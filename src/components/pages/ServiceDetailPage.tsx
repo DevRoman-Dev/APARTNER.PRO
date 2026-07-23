@@ -4,6 +4,7 @@ import { type Locale, localePath, t } from "@/lib/i18n";
 import type { ServiceItem } from "@/lib/content";
 import { getServiceExtras } from "@/lib/service-extras";
 import { CtaSection } from "@/components/CtaSection";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 const labels = {
   en: { whatYouGet: "What you get", stack: "Stack", process: "How we work", faq: "Frequently asked questions", benefits: "Why teams pick us", startingFrom: "Starting from", timeline: "Timeline", rating: "based on", reviews: "client reviews", related: "Other services", breadcrumb: { home: "Home", services: "Services" } },
@@ -20,13 +21,13 @@ export function ServiceDetailPage({ locale, service, others }: { locale: Locale;
       {/* Breadcrumb + hero */}
       <section className="pt-20 pb-16 border-b border-border">
         <div className="max-w-7xl mx-auto px-6">
-          <nav aria-label="Breadcrumb" className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-8 flex items-center gap-2 flex-wrap">
-            <Link to={localePath(locale, "/")} className="hover:text-accent">{l.breadcrumb.home}</Link>
-            <span>/</span>
-            <Link to={localePath(locale, "/services")} className="hover:text-accent">{l.breadcrumb.services}</Link>
-            <span>/</span>
-            <span className="text-foreground">{service.title[locale]}</span>
-          </nav>
+          <Breadcrumbs 
+            locale={locale} 
+            items={[
+              { label: l.breadcrumb.services, href: localePath(locale, "/services") },
+              { label: service.title[locale] }
+            ]} 
+          />
           <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent font-bold">
             {service.num}/ {service.stack[0]}
           </span>

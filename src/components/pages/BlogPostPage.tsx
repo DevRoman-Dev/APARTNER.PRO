@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { type Locale, localePath, t } from "@/lib/i18n";
 import { type BlogPost, POSTS } from "@/lib/content";
 import { CtaSection } from "@/components/CtaSection";
+import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 
 function renderBody(body: string) {
   const blocks = body.trim().split(/\n\n+/);
@@ -42,12 +43,13 @@ export function BlogPostPage({ locale, post }: { locale: Locale; post: BlogPost 
     <>
       <article className="pt-16 pb-24">
         <div className="max-w-3xl mx-auto px-6">
-          <Link
-            to={localePath(locale, "/blog")}
-            className="font-mono text-[10px] uppercase tracking-widest text-muted-foreground hover:text-accent inline-flex items-center gap-2 mb-8"
-          >
-            ← {t(locale, "blog.title")}
-          </Link>
+          <Breadcrumbs 
+            locale={locale} 
+            items={[
+              { label: t(locale, "blog.title"), href: localePath(locale, "/blog") },
+              { label: post.title[locale] }
+            ]} 
+          />
           <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
             <span className="text-accent font-bold">{post.category[locale]}</span>
             <span>·</span>
