@@ -9,9 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCssUrl from "../styles.css?url";
-// @ts-ignore
-import appCssInline from "../styles.css?inline";
+import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import { SiteLayout } from "@/components/SiteLayout";
@@ -88,13 +86,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-400-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-500-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-700-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-800-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-400-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-500-normal.woff2", crossOrigin: "anonymous" },
-      ...(import.meta.env.DEV ? [{ rel: "stylesheet", href: appCssUrl }] : []),
     ],
   }),
   shellComponent: RootShell,
@@ -112,9 +110,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
-        {import.meta.env.PROD && (
-          <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
-        )}
       </head>
       <body>
         {children}
