@@ -12,20 +12,20 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as LangRouteImport } from './routes/$lang'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as BlogRouteImport } from './routes/blog'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as LangIndexRouteImport } from './routes/$lang.index'
 import { Route as LangAboutRouteImport } from './routes/$lang.about'
-import { Route as LangBlogRouteImport } from './routes/$lang.blog'
 import { Route as LangContactRouteImport } from './routes/$lang.contact'
 import { Route as LangPortfolioRouteImport } from './routes/$lang.portfolio'
 import { Route as LangServicesRouteImport } from './routes/$lang.services'
+import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
+import { Route as LangBlogIndexRouteImport } from './routes/$lang.blog.index'
 import { Route as LangBlogSlugRouteImport } from './routes/$lang.blog.$slug'
 import { Route as LangServicesIndexRouteImport } from './routes/$lang.services.index'
 import { Route as LangServicesSlugRouteImport } from './routes/$lang.services.$slug'
@@ -43,11 +43,6 @@ const LangRoute = LangRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -80,11 +75,6 @@ const LangAboutRoute = LangAboutRouteImport.update({
   path: '/about',
   getParentRoute: () => LangRoute,
 } as any)
-const LangBlogRoute = LangBlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => LangRoute,
-} as any)
 const LangContactRoute = LangContactRouteImport.update({
   id: '/contact',
   path: '/contact',
@@ -100,10 +90,15 @@ const LangServicesRoute = LangServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => LangRoute,
 } as any)
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogSlugRoute = BlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => BlogRoute,
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
@@ -115,10 +110,15 @@ const ServicesSlugRoute = ServicesSlugRouteImport.update({
   path: '/$slug',
   getParentRoute: () => ServicesRoute,
 } as any)
+const LangBlogIndexRoute = LangBlogIndexRouteImport.update({
+  id: '/blog/',
+  path: '/blog/',
+  getParentRoute: () => LangRoute,
+} as any)
 const LangBlogSlugRoute = LangBlogSlugRouteImport.update({
-  id: '/$slug',
-  path: '/$slug',
-  getParentRoute: () => LangBlogRoute,
+  id: '/blog/$slug',
+  path: '/blog/$slug',
+  getParentRoute: () => LangRoute,
 } as any)
 const LangServicesIndexRoute = LangServicesIndexRouteImport.update({
   id: '/',
@@ -135,41 +135,41 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
-  '/$lang/blog': typeof LangBlogRouteWithChildren
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
   '/$lang/services': typeof LangServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
+  '/$lang/blog/': typeof LangBlogIndexRoute
   '/$lang/services/': typeof LangServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
-  '/$lang/blog': typeof LangBlogRouteWithChildren
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang': typeof LangIndexRoute
+  '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
+  '/$lang/blog': typeof LangBlogIndexRoute
   '/$lang/services': typeof LangServicesIndexRoute
 }
 export interface FileRoutesById {
@@ -177,22 +177,22 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/$lang': typeof LangRouteWithChildren
   '/about': typeof AboutRoute
-  '/blog': typeof BlogRouteWithChildren
   '/contact': typeof ContactRoute
   '/portfolio': typeof PortfolioRoute
   '/services': typeof ServicesRouteWithChildren
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/$lang/about': typeof LangAboutRoute
-  '/$lang/blog': typeof LangBlogRouteWithChildren
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
   '/$lang/services': typeof LangServicesRouteWithChildren
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
+  '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
+  '/$lang/blog/': typeof LangBlogIndexRoute
   '/$lang/services/': typeof LangServicesIndexRoute
 }
 export interface FileRouteTypes {
@@ -201,63 +201,63 @@ export interface FileRouteTypes {
     | '/'
     | '/$lang'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/portfolio'
     | '/services'
     | '/sitemap.xml'
     | '/$lang/about'
-    | '/$lang/blog'
     | '/$lang/contact'
     | '/$lang/portfolio'
     | '/$lang/services'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang/'
+    | '/blog/'
     | '/services/'
     | '/$lang/blog/$slug'
     | '/$lang/services/$slug'
+    | '/$lang/blog/'
     | '/$lang/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/portfolio'
     | '/sitemap.xml'
     | '/$lang/about'
-    | '/$lang/blog'
     | '/$lang/contact'
     | '/$lang/portfolio'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang'
+    | '/blog'
     | '/services'
     | '/$lang/blog/$slug'
     | '/$lang/services/$slug'
+    | '/$lang/blog'
     | '/$lang/services'
   id:
     | '__root__'
     | '/'
     | '/$lang'
     | '/about'
-    | '/blog'
     | '/contact'
     | '/portfolio'
     | '/services'
     | '/sitemap.xml'
     | '/$lang/about'
-    | '/$lang/blog'
     | '/$lang/contact'
     | '/$lang/portfolio'
     | '/$lang/services'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang/'
+    | '/blog/'
     | '/services/'
     | '/$lang/blog/$slug'
     | '/$lang/services/$slug'
+    | '/$lang/blog/'
     | '/$lang/services/'
   fileRoutesById: FileRoutesById
 }
@@ -265,11 +265,12 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   LangRoute: typeof LangRouteWithChildren
   AboutRoute: typeof AboutRoute
-  BlogRoute: typeof BlogRouteWithChildren
   ContactRoute: typeof ContactRoute
   PortfolioRoute: typeof PortfolioRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  BlogSlugRoute: typeof BlogSlugRoute
+  BlogIndexRoute: typeof BlogIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -293,13 +294,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -344,13 +338,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangAboutRouteImport
       parentRoute: typeof LangRoute
     }
-    '/$lang/blog': {
-      id: '/$lang/blog'
-      path: '/blog'
-      fullPath: '/$lang/blog'
-      preLoaderRoute: typeof LangBlogRouteImport
-      parentRoute: typeof LangRoute
-    }
     '/$lang/contact': {
       id: '/$lang/contact'
       path: '/contact'
@@ -372,12 +359,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LangServicesRouteImport
       parentRoute: typeof LangRoute
     }
+    '/blog/': {
+      id: '/blog/'
+      path: '/blog'
+      fullPath: '/blog/'
+      preLoaderRoute: typeof BlogIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/blog/$slug': {
       id: '/blog/$slug'
-      path: '/$slug'
+      path: '/blog/$slug'
       fullPath: '/blog/$slug'
       preLoaderRoute: typeof BlogSlugRouteImport
-      parentRoute: typeof BlogRoute
+      parentRoute: typeof rootRouteImport
     }
     '/services/': {
       id: '/services/'
@@ -393,12 +387,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesSlugRouteImport
       parentRoute: typeof ServicesRoute
     }
+    '/$lang/blog/': {
+      id: '/$lang/blog/'
+      path: '/blog'
+      fullPath: '/$lang/blog/'
+      preLoaderRoute: typeof LangBlogIndexRouteImport
+      parentRoute: typeof LangRoute
+    }
     '/$lang/blog/$slug': {
       id: '/$lang/blog/$slug'
-      path: '/$slug'
+      path: '/blog/$slug'
       fullPath: '/$lang/blog/$slug'
       preLoaderRoute: typeof LangBlogSlugRouteImport
-      parentRoute: typeof LangBlogRoute
+      parentRoute: typeof LangRoute
     }
     '/$lang/services/': {
       id: '/$lang/services/'
@@ -417,18 +418,6 @@ declare module '@tanstack/react-router' {
   }
 }
 
-interface LangBlogRouteChildren {
-  LangBlogSlugRoute: typeof LangBlogSlugRoute
-}
-
-const LangBlogRouteChildren: LangBlogRouteChildren = {
-  LangBlogSlugRoute: LangBlogSlugRoute,
-}
-
-const LangBlogRouteWithChildren = LangBlogRoute._addFileChildren(
-  LangBlogRouteChildren,
-)
-
 interface LangServicesRouteChildren {
   LangServicesSlugRoute: typeof LangServicesSlugRoute
   LangServicesIndexRoute: typeof LangServicesIndexRoute
@@ -445,33 +434,25 @@ const LangServicesRouteWithChildren = LangServicesRoute._addFileChildren(
 
 interface LangRouteChildren {
   LangAboutRoute: typeof LangAboutRoute
-  LangBlogRoute: typeof LangBlogRouteWithChildren
   LangContactRoute: typeof LangContactRoute
   LangPortfolioRoute: typeof LangPortfolioRoute
   LangServicesRoute: typeof LangServicesRouteWithChildren
   LangIndexRoute: typeof LangIndexRoute
+  LangBlogSlugRoute: typeof LangBlogSlugRoute
+  LangBlogIndexRoute: typeof LangBlogIndexRoute
 }
 
 const LangRouteChildren: LangRouteChildren = {
   LangAboutRoute: LangAboutRoute,
-  LangBlogRoute: LangBlogRouteWithChildren,
   LangContactRoute: LangContactRoute,
   LangPortfolioRoute: LangPortfolioRoute,
   LangServicesRoute: LangServicesRouteWithChildren,
   LangIndexRoute: LangIndexRoute,
+  LangBlogSlugRoute: LangBlogSlugRoute,
+  LangBlogIndexRoute: LangBlogIndexRoute,
 }
 
 const LangRouteWithChildren = LangRoute._addFileChildren(LangRouteChildren)
-
-interface BlogRouteChildren {
-  BlogSlugRoute: typeof BlogSlugRoute
-}
-
-const BlogRouteChildren: BlogRouteChildren = {
-  BlogSlugRoute: BlogSlugRoute,
-}
-
-const BlogRouteWithChildren = BlogRoute._addFileChildren(BlogRouteChildren)
 
 interface ServicesRouteChildren {
   ServicesSlugRoute: typeof ServicesSlugRoute
@@ -491,11 +472,12 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   LangRoute: LangRouteWithChildren,
   AboutRoute: AboutRoute,
-  BlogRoute: BlogRouteWithChildren,
   ContactRoute: ContactRoute,
   PortfolioRoute: PortfolioRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  BlogSlugRoute: BlogSlugRoute,
+  BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
