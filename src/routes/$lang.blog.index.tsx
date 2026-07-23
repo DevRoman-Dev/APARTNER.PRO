@@ -8,11 +8,13 @@ const meta: Record<Locale, { title: string; description: string }> = {
   en: { title: "Blog", description: "Insights on web development and SEO." },
   uk: {
     title: "Блог — Статті про веб-розробку, e-commerce та SEO",
-    description: "Технічні статті про Laravel, PrestaShop, WordPress, headless commerce, Core Web Vitals та оптимізацію конверсії.",
+    description:
+      "Технічні статті про Laravel, PrestaShop, WordPress, headless commerce, Core Web Vitals та оптимізацію конверсії.",
   },
   ru: {
     title: "Блог — Статьи о веб-разработке, e-commerce и SEO",
-    description: "Технические статьи о Laravel, PrestaShop, WordPress, headless commerce, Core Web Vitals и оптимизации конверсии.",
+    description:
+      "Технические статьи о Laravel, PrestaShop, WordPress, headless commerce, Core Web Vitals и оптимизации конверсии.",
   },
 };
 

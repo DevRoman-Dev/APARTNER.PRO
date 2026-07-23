@@ -8,11 +8,13 @@ const meta: Record<Locale, { title: string; description: string }> = {
   en: { title: "Contact", description: "Get in touch." },
   uk: {
     title: "Контакти APARTNER.PRO — Прорахунок за 24 години",
-    description: "Розкажіть про ваш проект. Відповідаємо протягом 24 годин. Email, телефон і форма зв'язку.",
+    description:
+      "Розкажіть про ваш проект. Відповідаємо протягом 24 годин. Email, телефон і форма зв'язку.",
   },
   ru: {
     title: "Контакты APARTNER.PRO — Расчёт за 24 часа",
-    description: "Расскажите о вашем проекте. Отвечаем в течение 24 часов. Email, телефон и форма связи.",
+    description:
+      "Расскажите о вашем проекте. Отвечаем в течение 24 часов. Email, телефон и форма связи.",
   },
 };
 

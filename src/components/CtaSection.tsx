@@ -11,9 +11,7 @@ export function CtaSection({ locale }: { locale: Locale }) {
             {t(locale, "cta.title.2")} <br />
             <span className="text-accent">{t(locale, "cta.title.3")}</span>
           </h2>
-          <p className="text-lg text-background/60 max-w-xl mb-10">
-            {t(locale, "cta.subtitle")}
-          </p>
+          <p className="text-lg text-background/60 max-w-xl mb-10">{t(locale, "cta.subtitle")}</p>
           <div className="flex flex-wrap gap-4">
             <Link
               to={localePath(locale, "/contact")}

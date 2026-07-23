@@ -8,11 +8,13 @@ const meta: Record<Locale, { title: string; description: string }> = {
   en: { title: "Portfolio", description: "Selected web and mobile projects." },
   uk: {
     title: "Портфоліо — Обрані веб- та мобільні проекти",
-    description: "Обрані проекти: fintech, e-commerce, SaaS, логістика та healthcare. Laravel, PrestaShop, WordPress, React Native.",
+    description:
+      "Обрані проекти: fintech, e-commerce, SaaS, логістика та healthcare. Laravel, PrestaShop, WordPress, React Native.",
   },
   ru: {
     title: "Портфолио — Избранные веб- и мобильные проекты",
-    description: "Избранные проекты: fintech, e-commerce, SaaS, логистика и healthcare. Laravel, PrestaShop, WordPress, React Native.",
+    description:
+      "Избранные проекты: fintech, e-commerce, SaaS, логистика и healthcare. Laravel, PrestaShop, WordPress, React Native.",
   },
 };
 

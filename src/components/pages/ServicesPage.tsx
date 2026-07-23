@@ -40,7 +40,10 @@ export function ServicesPage({ locale }: { locale: Locale }) {
               </p>
               <div className="flex flex-wrap gap-2 mb-6">
                 {s.stack.slice(0, 3).map((tag) => (
-                  <span key={tag} className="text-[10px] font-mono px-2 py-1 bg-secondary text-muted-foreground rounded-sm uppercase">
+                  <span
+                    key={tag}
+                    className="text-[10px] font-mono px-2 py-1 bg-secondary text-muted-foreground rounded-sm uppercase"
+                  >
                     {tag}
                   </span>
                 ))}

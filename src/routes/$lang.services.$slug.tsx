@@ -75,8 +75,18 @@ function buildJsonLd(locale: Locale, slug: string) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: labels[locale].home, item: `${SITE_URL}${localePath(locale, "/")}` },
-        { "@type": "ListItem", position: 2, name: labels[locale].services, item: `${SITE_URL}${localePath(locale, "/services")}` },
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: labels[locale].home,
+          item: `${SITE_URL}${localePath(locale, "/")}`,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: labels[locale].services,
+          item: `${SITE_URL}${localePath(locale, "/services")}`,
+        },
         { "@type": "ListItem", position: 3, name: service.title[locale], item: url },
       ],
     }),
