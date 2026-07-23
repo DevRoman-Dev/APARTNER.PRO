@@ -28,10 +28,12 @@ import { Route as LangTermsRouteImport } from './routes/$lang.terms'
 import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
+import { Route as InfoWeStandWithUkraineRouteImport } from './routes/info.we-stand-with-ukraine'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
 import { Route as ServicesSlugRouteImport } from './routes/services.$slug'
 import { Route as LangBlogIndexRouteImport } from './routes/$lang.blog.index'
 import { Route as LangBlogSlugRouteImport } from './routes/$lang.blog.$slug'
+import { Route as LangInfoWeStandWithUkraineRouteImport } from './routes/$lang.info.we-stand-with-ukraine'
 import { Route as LangServicesIndexRouteImport } from './routes/$lang.services.index'
 import { Route as LangServicesSlugRouteImport } from './routes/$lang.services.$slug'
 
@@ -130,6 +132,11 @@ const BlogSlugRoute = BlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InfoWeStandWithUkraineRoute = InfoWeStandWithUkraineRouteImport.update({
+  id: '/info/we-stand-with-ukraine',
+  path: '/info/we-stand-with-ukraine',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ServicesIndexRoute = ServicesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -150,6 +157,12 @@ const LangBlogSlugRoute = LangBlogSlugRouteImport.update({
   path: '/blog/$slug',
   getParentRoute: () => LangRoute,
 } as any)
+const LangInfoWeStandWithUkraineRoute =
+  LangInfoWeStandWithUkraineRouteImport.update({
+    id: '/info/we-stand-with-ukraine',
+    path: '/info/we-stand-with-ukraine',
+    getParentRoute: () => LangRoute,
+  } as any)
 const LangServicesIndexRoute = LangServicesIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -179,11 +192,13 @@ export interface FileRoutesByFullPath {
   '/$lang/terms': typeof LangTermsRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/info/we-stand-with-ukraine': typeof InfoWeStandWithUkraineRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
+  '/$lang/info/we-stand-with-ukraine': typeof LangInfoWeStandWithUkraineRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
   '/$lang/blog/': typeof LangBlogIndexRoute
   '/$lang/services/': typeof LangServicesIndexRoute
@@ -203,11 +218,13 @@ export interface FileRoutesByTo {
   '/$lang/terms': typeof LangTermsRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/info/we-stand-with-ukraine': typeof InfoWeStandWithUkraineRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang': typeof LangIndexRoute
   '/blog': typeof BlogIndexRoute
   '/services': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
+  '/$lang/info/we-stand-with-ukraine': typeof LangInfoWeStandWithUkraineRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
   '/$lang/blog': typeof LangBlogIndexRoute
   '/$lang/services': typeof LangServicesIndexRoute
@@ -231,11 +248,13 @@ export interface FileRoutesById {
   '/$lang/terms': typeof LangTermsRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
+  '/info/we-stand-with-ukraine': typeof InfoWeStandWithUkraineRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
   '/blog/': typeof BlogIndexRoute
   '/services/': typeof ServicesIndexRoute
   '/$lang/blog/$slug': typeof LangBlogSlugRoute
+  '/$lang/info/we-stand-with-ukraine': typeof LangInfoWeStandWithUkraineRoute
   '/$lang/services/$slug': typeof LangServicesSlugRoute
   '/$lang/blog/': typeof LangBlogIndexRoute
   '/$lang/services/': typeof LangServicesIndexRoute
@@ -260,11 +279,13 @@ export interface FileRouteTypes {
     | '/$lang/terms'
     | '/api/contact'
     | '/blog/$slug'
+    | '/info/we-stand-with-ukraine'
     | '/services/$slug'
     | '/$lang/'
     | '/blog/'
     | '/services/'
     | '/$lang/blog/$slug'
+    | '/$lang/info/we-stand-with-ukraine'
     | '/$lang/services/$slug'
     | '/$lang/blog/'
     | '/$lang/services/'
@@ -284,11 +305,13 @@ export interface FileRouteTypes {
     | '/$lang/terms'
     | '/api/contact'
     | '/blog/$slug'
+    | '/info/we-stand-with-ukraine'
     | '/services/$slug'
     | '/$lang'
     | '/blog'
     | '/services'
     | '/$lang/blog/$slug'
+    | '/$lang/info/we-stand-with-ukraine'
     | '/$lang/services/$slug'
     | '/$lang/blog'
     | '/$lang/services'
@@ -311,11 +334,13 @@ export interface FileRouteTypes {
     | '/$lang/terms'
     | '/api/contact'
     | '/blog/$slug'
+    | '/info/we-stand-with-ukraine'
     | '/services/$slug'
     | '/$lang/'
     | '/blog/'
     | '/services/'
     | '/$lang/blog/$slug'
+    | '/$lang/info/we-stand-with-ukraine'
     | '/$lang/services/$slug'
     | '/$lang/blog/'
     | '/$lang/services/'
@@ -333,6 +358,7 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   ApiContactRoute: typeof ApiContactRoute
   BlogSlugRoute: typeof BlogSlugRoute
+  InfoWeStandWithUkraineRoute: typeof InfoWeStandWithUkraineRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
 
@@ -471,6 +497,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BlogSlugRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/info/we-stand-with-ukraine': {
+      id: '/info/we-stand-with-ukraine'
+      path: '/info/we-stand-with-ukraine'
+      fullPath: '/info/we-stand-with-ukraine'
+      preLoaderRoute: typeof InfoWeStandWithUkraineRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/services/': {
       id: '/services/'
       path: '/'
@@ -497,6 +530,13 @@ declare module '@tanstack/react-router' {
       path: '/blog/$slug'
       fullPath: '/$lang/blog/$slug'
       preLoaderRoute: typeof LangBlogSlugRouteImport
+      parentRoute: typeof LangRoute
+    }
+    '/$lang/info/we-stand-with-ukraine': {
+      id: '/$lang/info/we-stand-with-ukraine'
+      path: '/info/we-stand-with-ukraine'
+      fullPath: '/$lang/info/we-stand-with-ukraine'
+      preLoaderRoute: typeof LangInfoWeStandWithUkraineRouteImport
       parentRoute: typeof LangRoute
     }
     '/$lang/services/': {
@@ -539,6 +579,7 @@ interface LangRouteChildren {
   LangTermsRoute: typeof LangTermsRoute
   LangIndexRoute: typeof LangIndexRoute
   LangBlogSlugRoute: typeof LangBlogSlugRoute
+  LangInfoWeStandWithUkraineRoute: typeof LangInfoWeStandWithUkraineRoute
   LangBlogIndexRoute: typeof LangBlogIndexRoute
 }
 
@@ -551,6 +592,7 @@ const LangRouteChildren: LangRouteChildren = {
   LangTermsRoute: LangTermsRoute,
   LangIndexRoute: LangIndexRoute,
   LangBlogSlugRoute: LangBlogSlugRoute,
+  LangInfoWeStandWithUkraineRoute: LangInfoWeStandWithUkraineRoute,
   LangBlogIndexRoute: LangBlogIndexRoute,
 }
 
@@ -582,6 +624,7 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   ApiContactRoute: ApiContactRoute,
   BlogSlugRoute: BlogSlugRoute,
+  InfoWeStandWithUkraineRoute: InfoWeStandWithUkraineRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
 export const routeTree = rootRouteImport
