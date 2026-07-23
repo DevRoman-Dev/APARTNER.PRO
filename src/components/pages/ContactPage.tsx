@@ -1,14 +1,40 @@
 import { useState, type FormEvent } from "react";
 import { Mail, Phone, MapPin, Check } from "lucide-react";
 import { type Locale, t } from "@/lib/i18n";
+import { sendTelegramMessage } from "@/lib/contact";
+import { toast } from "sonner";
 
 export function ContactPage({ locale }: { locale: Locale }) {
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const onSubmit = (e: FormEvent) => {
+  const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // demo only; in real life submit to a server function
-    setSent(true);
+    setLoading(true);
+
+    const formData = new FormData(e.currentTarget);
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      company: formData.get("company") as string,
+      budget: formData.get("budget") as string,
+      message: formData.get("message") as string,
+    };
+
+    try {
+      const res = await sendTelegramMessage({ data });
+      if (res.success) {
+        setSent(true);
+        toast.success(t(locale, "contact.form.success") || "Message sent successfully!");
+      } else {
+        toast.error(res.error || "Failed to send message. Please try again.");
+      }
+    } catch (err) {
+      console.error(err);
+      toast.error("An unexpected error occurred. Please try again later.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -75,9 +101,10 @@ export function ContactPage({ locale }: { locale: Locale }) {
                 </div>
                 <button
                   type="submit"
-                  className="w-full bg-accent text-accent-foreground py-4 font-bold uppercase tracking-widest text-sm hover:translate-y-[-2px] transition-transform"
+                  disabled={loading}
+                  className="w-full bg-accent text-accent-foreground py-4 font-bold uppercase tracking-widest text-sm hover:translate-y-[-2px] transition-transform disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
                 >
-                  {t(locale, "contact.form.submit")}
+                  {loading ? "Sending..." : t(locale, "contact.form.submit")}
                 </button>
               </form>
             )}
