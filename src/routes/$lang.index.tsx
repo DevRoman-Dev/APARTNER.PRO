@@ -3,6 +3,7 @@ import { HomePage } from "@/components/pages/HomePage";
 import { SiteLayout } from "@/components/SiteLayout";
 import { pageHead } from "@/lib/seo";
 import { type Locale } from "@/lib/i18n";
+import { BASE_URL } from "@/lib/config";
 
 const titles: Record<Locale, { title: string; description: string }> = {
   en: {
@@ -22,7 +23,21 @@ const titles: Record<Locale, { title: string; description: string }> = {
 export const Route = createFileRoute("/$lang/")({
   head: ({ params }) => {
     const locale = params.lang as Locale;
-    return pageHead({ locale, path: "/", ...titles[locale] });
+    return pageHead({ 
+      locale, 
+      path: "/", 
+      ...titles[locale],
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        name: "APARTNER.PRO",
+        url: BASE_URL,
+        logo: `${BASE_URL}/icon.svg`,
+        email: "info@apartner.pro",
+        telephone: "+380938800822",
+        sameAs: ["https://www.linkedin.com/company/apartner-pro"],
+      }
+    });
   },
   component: RouteComponent,
 });

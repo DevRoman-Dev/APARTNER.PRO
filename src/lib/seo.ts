@@ -11,6 +11,7 @@ export interface PageMeta {
   ogType?: "website" | "article";
   ogImage?: string;
   noIndex?: boolean;
+  structuredData?: Record<string, any> | Array<Record<string, any>>;
 }
 
 const localeTag: Record<Locale, string> = {
@@ -52,5 +53,14 @@ export function pageHead(m: PageMeta) {
     { rel: "alternate", hrefLang: "x-default", href: `${BASE_URL}${localePath("en", m.path)}` },
   ];
 
-  return { meta, links };
+  const scripts = [];
+  if (m.structuredData) {
+    const dataArray = Array.isArray(m.structuredData) ? m.structuredData : [m.structuredData];
+    scripts.push({
+      type: "application/ld+json",
+      children: JSON.stringify(dataArray.length === 1 ? dataArray[0] : dataArray),
+    });
+  }
+
+  return { meta, links, scripts };
 }

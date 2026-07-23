@@ -7,13 +7,13 @@ import { pageHead } from "@/lib/seo";
 import { localePath } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 
-const SITE_URL = "https://apartner.lovable.app";
+import { BASE_URL } from "@/lib/config";
 
 function buildJsonLd(locale: Locale, slug: string) {
   const service = getService(slug);
   const extras = getServiceExtras(slug);
   if (!service) return [];
-  const url = `${SITE_URL}${localePath(locale, `/services/${slug}`)}`;
+  const url = `${BASE_URL}${localePath(locale, `/services/${slug}`)}`;
   const labels = {
     en: { home: "Home", services: "Services" },
     uk: { home: "Головна", services: "Послуги" },
@@ -31,7 +31,7 @@ function buildJsonLd(locale: Locale, slug: string) {
     provider: {
       "@type": "Organization",
       name: "APARTNER.PRO",
-      url: SITE_URL,
+      url: BASE_URL,
     },
     areaServed: "Worldwide",
     url,
@@ -75,8 +75,8 @@ function buildJsonLd(locale: Locale, slug: string) {
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: labels[locale].home, item: `${SITE_URL}${localePath(locale, "/")}` },
-        { "@type": "ListItem", position: 2, name: labels[locale].services, item: `${SITE_URL}${localePath(locale, "/services")}` },
+        { "@type": "ListItem", position: 1, name: labels[locale].home, item: `${BASE_URL}${localePath(locale, "/")}` },
+        { "@type": "ListItem", position: 2, name: labels[locale].services, item: `${BASE_URL}${localePath(locale, "/services")}` },
         { "@type": "ListItem", position: 3, name: service.title[locale], item: url },
       ],
     }),
