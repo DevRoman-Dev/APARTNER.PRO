@@ -45,8 +45,8 @@ export function Footer({ locale }: { locale: Locale }) {
             © {year} APARTNER.PRO — {t(locale, "footer.rights")}
           </p>
           <div className="flex gap-6 text-[10px] font-mono text-muted-foreground uppercase tracking-widest">
-            <a href="#" className="hover:text-foreground">{t(locale, "footer.privacy")}</a>
-            <a href="#" className="hover:text-foreground">{t(locale, "footer.terms")}</a>
+            <Link to={localePath(locale, "/privacy")} className="hover:text-foreground">{t(locale, "footer.privacy")}</Link>
+            <Link to={localePath(locale, "/terms")} className="hover:text-foreground">{t(locale, "footer.terms")}</Link>
           </div>
         </div>
       </div>
