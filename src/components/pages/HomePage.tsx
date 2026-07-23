@@ -184,18 +184,18 @@ export function HomePage({ locale }: { locale: Locale }) {
                 {t(locale, "blog.viewAll")}
               </Link>
             </div>
-            <div className="lg:col-span-8 flex flex-col">
+            <div className="lg:col-span-8 flex flex-col min-w-0">
               {POSTS.slice(0, 3).map((p) => (
                 <Link
                   key={p.slug}
                   to={localePath(locale, `/blog/${p.slug}`)}
-                  className="py-8 border-b border-border last:border-b-0 group flex justify-between items-center gap-6"
+                  className="py-8 border-b border-border last:border-b-0 group flex justify-between items-center gap-6 min-w-0"
                 >
-                  <div className="flex gap-8 items-center min-w-0">
+                  <div className="flex gap-4 sm:gap-8 items-center min-w-0">
                     <span className="font-mono text-[10px] text-muted-foreground shrink-0 hidden sm:inline">
                       {new Date(p.date).toLocaleDateString(locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU", { month: "short", day: "numeric" }).toUpperCase()}
                     </span>
-                    <h4 className="text-lg font-bold group-hover:text-accent transition-colors truncate">
+                    <h4 className="text-base sm:text-lg font-bold group-hover:text-accent transition-colors break-words line-clamp-2">
                       {p.title[locale]}
                     </h4>
                   </div>
