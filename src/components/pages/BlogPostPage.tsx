@@ -3,14 +3,42 @@ import { type Locale, localePath, t } from "@/lib/i18n";
 import { type BlogPost, POSTS } from "@/lib/content";
 import { CtaSection } from "@/components/CtaSection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
+import { TableOfContents } from "@/components/ui/TableOfContents";
+
+/** Turns a heading text into a URL-safe anchor id */
+function slugify(text: string): string {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-");
+}
+
+/** Extracts all ## headings from a markdown body string */
+export function extractHeadings(body: string): Array<{ id: string; label: string }> {
+  return body
+    .trim()
+    .split(/\n\n+/)
+    .filter((b) => b.startsWith("## "))
+    .map((b) => {
+      const label = b.slice(3).trim();
+      return { id: slugify(label), label };
+    });
+}
 
 function renderBody(body: string) {
   const blocks = body.trim().split(/\n\n+/);
   return blocks.map((b, i) => {
     if (b.startsWith("## ")) {
+      const label = b.slice(3).trim();
+      const id = slugify(label);
       return (
-        <h2 key={i} className="text-2xl md:text-3xl font-extrabold tracking-tight mt-12 mb-4">
-          {b.slice(3)}
+        <h2
+          key={i}
+          id={id}
+          className="text-2xl md:text-3xl font-extrabold tracking-tight mt-12 mb-4 scroll-mt-24"
+        >
+          {label}
         </h2>
       );
     }
@@ -39,40 +67,56 @@ export function BlogPostPage({ locale, post }: { locale: Locale; post: BlogPost 
       { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" },
     );
   const related = POSTS.filter((p) => p.slug !== post.slug).slice(0, 3);
+  const headings = extractHeadings(post.body[locale]);
+
   return (
     <>
       <article className="pt-16 pb-24">
-        <div className="max-w-3xl mx-auto px-6">
-          <Breadcrumbs 
-            locale={locale} 
-            items={[
-              { label: t(locale, "blog.title"), href: localePath(locale, "/blog") },
-              { label: post.title[locale] }
-            ]} 
-          />
-          <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
-            <span className="text-accent font-bold">{post.category[locale]}</span>
-            <span>·</span>
-            <span>{fmt(post.date)}</span>
-            <span>·</span>
-            <span>{post.readMin} {t(locale, "blog.minRead")}</span>
-          </div>
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] mb-8">
-            {post.title[locale]}
-          </h1>
-          <p className="text-xl text-muted-foreground leading-relaxed mb-10 border-l-2 border-accent pl-6">
-            {post.excerpt[locale]}
-          </p>
-          <div className="aspect-[16/9] overflow-hidden border border-border rounded-sm mb-12 bg-secondary">
-            <img
-              src={post.cover}
-              alt={post.title[locale]}
-              width={1280}
-              height={720}
-              className="w-full h-full object-cover"
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="max-w-3xl">
+            <Breadcrumbs
+              locale={locale}
+              items={[
+                { label: t(locale, "blog.title"), href: localePath(locale, "/blog") },
+                { label: post.title[locale] }
+              ]}
             />
+            <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
+              <span className="text-accent font-bold">{post.category[locale]}</span>
+              <span>·</span>
+              <span>{fmt(post.date)}</span>
+              <span>·</span>
+              <span>{post.readMin} {t(locale, "blog.minRead")}</span>
+            </div>
+            <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] mb-8">
+              {post.title[locale]}
+            </h1>
+            <p className="text-xl text-muted-foreground leading-relaxed mb-10 border-l-2 border-accent pl-6">
+              {post.excerpt[locale]}
+            </p>
+            <div className="aspect-[16/9] overflow-hidden border border-border rounded-sm mb-12 bg-secondary">
+              <img
+                src={post.cover}
+                alt={post.title[locale]}
+                width={1280}
+                height={720}
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
-          <div className="prose-content">{renderBody(post.body[locale])}</div>
+
+          {/* Two-column layout: article + sticky ToC */}
+          <div className="grid lg:grid-cols-[1fr_260px] gap-16 items-start">
+            <div className="prose-content min-w-0">
+              {renderBody(post.body[locale])}
+            </div>
+
+            {headings.length > 0 && (
+              <aside className="hidden lg:block sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto">
+                <TableOfContents headings={headings} locale={locale} />
+              </aside>
+            )}
+          </div>
         </div>
       </article>
 
