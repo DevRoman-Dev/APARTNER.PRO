@@ -41,22 +41,8 @@ export default {
   async fetch(request: Request, env: unknown, ctx: unknown) {
     try {
       const handler = await getServerEntry();
-      let response = await handler.fetch(request, env, ctx);
-      response = await normalizeCatastrophicSsrResponse(response);
-      
-      // Cache successful HTML responses at the Edge (CDN) for fast TTFB (FCP/LCP boost)
-      if (
-        response.status === 200 &&
-        response.headers.get("content-type")?.includes("text/html")
-      ) {
-        // Create a new response to allow mutating headers (Responses from handlers are sometimes immutable)
-        const cachedResponse = new Response(response.body, response);
-        // Cache at CDN for 60 seconds, serve stale while revalidating in background for up to 1 day
-        cachedResponse.headers.set("Cache-Control", "public, s-maxage=60, stale-while-revalidate=86400");
-        return cachedResponse;
-      }
-      
-      return response;
+      const response = await handler.fetch(request, env, ctx);
+      return await normalizeCatastrophicSsrResponse(response);
     } catch (error) {
       console.error(error);
       return new Response(renderErrorPage(), {
