@@ -22,19 +22,21 @@ const localeTag: Record<Locale, string> = {
 import { BASE_URL } from "./config";
 
 export function pageHead(m: PageMeta) {
-  const fullTitle = m.title.includes(SITE) ? m.title : `${m.title} — ${SITE}`;
+  const safeTitle = m.title || "APARTNER.PRO";
+  const safeDescription = m.description || "";
+  const fullTitle = safeTitle.includes(SITE) ? safeTitle : `${safeTitle} — ${SITE}`;
   const canonical = `${BASE_URL}${localePath(m.locale, m.path)}`;
   const meta: Array<Record<string, string>> = [
     { title: fullTitle },
-    { name: "description", content: m.description },
+    { name: "description", content: safeDescription },
     { property: "og:title", content: fullTitle },
-    { property: "og:description", content: m.description },
+    { property: "og:description", content: safeDescription },
     { property: "og:type", content: m.ogType ?? "website" },
     { property: "og:url", content: canonical },
-    { property: "og:locale", content: localeTag[m.locale] },
+    { property: "og:locale", content: localeTag[m.locale] || "en" },
     { name: "twitter:card", content: m.ogImage ? "summary_large_image" : "summary" },
     { name: "twitter:title", content: fullTitle },
-    { name: "twitter:description", content: m.description },
+    { name: "twitter:description", content: safeDescription },
   ];
   if (m.ogImage) {
     const ogImgUrl = m.ogImage.startsWith("http") ? m.ogImage : `${BASE_URL}${m.ogImage}`;
