@@ -9,9 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCssUrl from "../styles.css?url";
-// @ts-ignore
-import appCssInline from "../styles.css?inline";
+import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import { SiteLayout } from "@/components/SiteLayout";
@@ -89,12 +87,8 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-400-normal.woff2", crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-500-normal.woff2", crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-700-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-800-normal.woff2", crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-400-normal.woff2", crossOrigin: "anonymous" },
-      { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/jetbrains-mono/jetbrains-mono-latin-500-normal.woff2", crossOrigin: "anonymous" },
-      ...(import.meta.env.DEV ? [{ rel: "stylesheet", href: appCssUrl }] : []),
+      { rel: "stylesheet", href: appCss },
     ],
   }),
   shellComponent: RootShell,
@@ -112,9 +106,6 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
-        {import.meta.env.PROD && (
-          <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
-        )}
       </head>
       <body>
         {children}
