@@ -14,7 +14,7 @@ export default defineConfig({
   },
   nitro: {
     routeRules: {
-      '/**': { isr: 60 }
+      '/**': { isr: 86400 }
     }
   },
 });
