@@ -33,6 +33,7 @@ export function AboutPage({ locale }: { locale: Locale }) {
             <img
               src={teamImg}
               alt={t(locale, "about.title")}
+              fetchPriority="high"
               width={1600}
               height={900}
               className="w-full h-full object-cover"

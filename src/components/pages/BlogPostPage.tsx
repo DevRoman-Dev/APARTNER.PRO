@@ -98,6 +98,7 @@ export function BlogPostPage({ locale, post }: { locale: Locale; post: BlogPost 
               <img
                 src={post.cover}
                 alt={post.title[locale]}
+                fetchPriority="high"
                 width={1280}
                 height={720}
                 className="w-full h-full object-cover"

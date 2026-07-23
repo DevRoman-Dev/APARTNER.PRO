@@ -37,6 +37,7 @@ export function BlogPage({ locale }: { locale: Locale }) {
               <img
                 src={featured.cover}
                 alt={featured.title[locale]}
+                fetchPriority="high"
                 width={1280}
                 height={800}
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
