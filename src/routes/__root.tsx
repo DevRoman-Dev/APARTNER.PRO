@@ -1,10 +1,3 @@
-import "@fontsource/inter/400.css";
-import "@fontsource/inter/500.css";
-import "@fontsource/inter/700.css";
-import "@fontsource/inter/800.css";
-import "@fontsource/jetbrains-mono/400.css";
-import "@fontsource/jetbrains-mono/500.css";
-
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import {
   Outlet,
@@ -16,7 +9,9 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
+import appCssUrl from "../styles.css?url";
+// @ts-ignore
+import appCssInline from "../styles.css?inline";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import { SiteLayout } from "@/components/SiteLayout";
@@ -92,9 +87,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
       { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-    ],
+    links: import.meta.env.DEV ? [
+      { rel: "stylesheet", href: appCssUrl },
+    ] : [],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -111,6 +106,9 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        {import.meta.env.PROD && (
+          <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
+        )}
       </head>
       <body>
         {children}
