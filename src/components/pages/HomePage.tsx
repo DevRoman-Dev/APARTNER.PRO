@@ -170,16 +170,16 @@ export function HomePage({ locale }: { locale: Locale }) {
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid lg:grid-cols-12 gap-12">
-            <div className="lg:col-span-4">
-              <h2 className="text-2xl font-extrabold tracking-tight mb-4 uppercase">
+            <div className="lg:col-span-4 break-words">
+              <h2 className="text-2xl font-extrabold tracking-tight mb-4 uppercase text-balance">
                 {t(locale, "blog.title")}
               </h2>
-              <p className="text-sm text-muted-foreground mb-6">
+              <p className="text-sm text-muted-foreground mb-6 text-pretty">
                 {t(locale, "blog.intro")}
               </p>
               <Link
                 to={localePath(locale, "/blog")}
-                className="inline-block px-6 py-3 border border-border text-xs font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors"
+                className="inline-block px-6 py-3 border border-border text-xs font-bold uppercase tracking-widest hover:bg-foreground hover:text-background transition-colors max-w-full text-center"
               >
                 {t(locale, "blog.viewAll")}
               </Link>
