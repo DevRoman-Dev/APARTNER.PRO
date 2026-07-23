@@ -1,3 +1,5 @@
 {
-  "autoCodeSplitting": false
+  "routeToken": "layout",
+  "routeTreeFile": "./src/routeTree.gen.ts",
+  "autoCodeSplitting": true
 }
