@@ -441,6 +441,7 @@ export const POSTS: BlogPost[] = [
       uk: "24 фікси конверсії для e-commerce. Перевірено на PrestaShop та WooCommerce — типовий ріст 30–60%.",
       ru: "24 фикса конверсии для e-commerce. Проверено на PrestaShop и WooCommerce — типичный рост 30–60%.",
     },
+  },
   {
     slug: "prestashop-vs-shopify",
     cover: prestashopHeadlessImg,
