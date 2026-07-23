@@ -31,10 +31,7 @@ export function Header({ locale }: Props) {
     <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-10">
-          <Link
-            to={localePath(locale, "/")}
-            className="font-extrabold tracking-tighter text-xl"
-          >
+          <Link to={localePath(locale, "/")} className="font-extrabold tracking-tighter text-xl">
             APARTNER<span className="text-accent">.</span>
           </Link>
           <div className="hidden lg:flex gap-7 text-sm font-medium text-muted-foreground">
@@ -74,11 +71,7 @@ export function Header({ locale }: Props) {
           >
             {t(locale, "nav.cta")}
           </Link>
-          <button
-            aria-label="Menu"
-            className="lg:hidden p-2"
-            onClick={() => setOpen(!open)}
-          >
+          <button aria-label="Menu" className="lg:hidden p-2" onClick={() => setOpen(!open)}>
             {open ? <X className="size-5" /> : <Menu className="size-5" />}
           </button>
         </div>

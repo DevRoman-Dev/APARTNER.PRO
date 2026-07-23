@@ -47,9 +47,7 @@ export function ContactPage({ locale }: { locale: Locale }) {
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mt-4 mb-6 leading-[0.95]">
             {t(locale, "contact.title")}
           </h1>
-          <p className="text-lg text-muted-foreground mb-10">
-            {t(locale, "contact.lead")}
-          </p>
+          <p className="text-lg text-muted-foreground mb-10">{t(locale, "contact.lead")}</p>
           <ul className="space-y-5">
             <li className="flex items-start gap-4">
               <Mail className="size-5 text-accent shrink-0 mt-1" />
@@ -82,11 +80,20 @@ export function ContactPage({ locale }: { locale: Locale }) {
               <form onSubmit={onSubmit} className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <Field label={t(locale, "contact.form.name")} name="name" required />
-                  <Field label={t(locale, "contact.form.email")} name="email" type="email" required />
+                  <Field
+                    label={t(locale, "contact.form.email")}
+                    name="email"
+                    type="email"
+                    required
+                  />
                 </div>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <Field label={t(locale, "contact.form.company")} name="company" />
-                  <Field label={t(locale, "contact.form.budget")} name="budget" placeholder="$5k – $50k" />
+                  <Field
+                    label={t(locale, "contact.form.budget")}
+                    name="budget"
+                    placeholder="$5k – $50k"
+                  />
                 </div>
                 <div>
                   <label className="block text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">
@@ -115,7 +122,19 @@ export function ContactPage({ locale }: { locale: Locale }) {
   );
 }
 
-function Field({ label, name, type = "text", required = false, placeholder }: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+function Field({
+  label,
+  name,
+  type = "text",
+  required = false,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <div>
       <label className="block text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-2">

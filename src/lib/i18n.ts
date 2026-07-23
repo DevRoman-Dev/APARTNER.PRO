@@ -27,7 +27,8 @@ const en: Dict = {
   "hero.title.1": "WE BUILD THE",
   "hero.title.2": "SYSTEMS THAT",
   "hero.title.3": "SCALE YOUR BUSINESS.",
-  "hero.subtitle": "Laravel, PrestaShop, WordPress and custom web apps for ambitious teams. Engineered for performance, designed for conversion.",
+  "hero.subtitle":
+    "Laravel, PrestaShop, WordPress and custom web apps for ambitious teams. Engineered for performance, designed for conversion.",
   "hero.cta.primary": "Start a Project",
   "hero.cta.secondary": "View Portfolio",
   "hero.trust": "Trusted by 120+ businesses worldwide",
@@ -36,7 +37,8 @@ const en: Dict = {
 
   "services.eyebrow": "Core Expertise",
   "services.title": "What we do",
-  "services.intro": "We don't just ship code. We design the technical foundations that drive rapid growth and sustainable conversion.",
+  "services.intro":
+    "We don't just ship code. We design the technical foundations that drive rapid growth and sustainable conversion.",
   "services.exploreAll": "Explore all services",
   "services.cta": "Request a quote",
 
@@ -46,7 +48,8 @@ const en: Dict = {
   "portfolio.explore": "Explore",
 
   "blog.title": "Insights",
-  "blog.intro": "Technical breakdowns on web architecture, e-commerce growth and search visibility.",
+  "blog.intro":
+    "Technical breakdowns on web architecture, e-commerce growth and search visibility.",
   "blog.viewAll": "View All Posts",
   "blog.readMore": "Read article",
   "blog.minRead": "min read",
@@ -69,14 +72,18 @@ const en: Dict = {
 
   "about.title": "About APARTNER.PRO",
   "about.eyebrow": "Studio",
-  "about.lead": "We are a team of senior developers and designers based in Kyiv, working with clients across Europe and the US since 2018. Official partner of Thirty Bees and Agile ServeX Inc.",
+  "about.lead":
+    "We are a team of senior developers and designers based in Kyiv, working with clients across Europe and the US since 2018. Official partner of Thirty Bees and Agile ServeX Inc.",
   "about.values.title": "How we work",
   "about.value.1.t": "Engineering first",
-  "about.value.1.d": "Clean architecture, typed code, automated tests. Your platform should be a competitive advantage, not technical debt.",
+  "about.value.1.d":
+    "Clean architecture, typed code, automated tests. Your platform should be a competitive advantage, not technical debt.",
   "about.value.2.t": "Conversion focused",
-  "about.value.2.d": "Every page, every flow, every component is measured against business outcomes — revenue, leads, retention.",
+  "about.value.2.d":
+    "Every page, every flow, every component is measured against business outcomes — revenue, leads, retention.",
   "about.value.3.t": "Long-term partnership",
-  "about.value.3.d": "We support what we build. 90% of our clients return for the next project. That's our quality metric.",
+  "about.value.3.d":
+    "We support what we build. 90% of our clients return for the next project. That's our quality metric.",
   "about.stats.years": "Years in business",
   "about.stats.projects": "Projects delivered",
   "about.stats.clients": "Returning clients",
@@ -109,7 +116,8 @@ const uk: Dict = {
   "hero.title.1": "МИ СТВОРЮЄМО",
   "hero.title.2": "СИСТЕМИ, ЩО",
   "hero.title.3": "МАСШТАБУЮТЬ БІЗНЕС.",
-  "hero.subtitle": "Розробка на Laravel, PrestaShop, WordPress та індивідуальні веб-додатки для амбітних команд. Швидкість, конверсія, надійність.",
+  "hero.subtitle":
+    "Розробка на Laravel, PrestaShop, WordPress та індивідуальні веб-додатки для амбітних команд. Швидкість, конверсія, надійність.",
   "hero.cta.primary": "Розпочати проект",
   "hero.cta.secondary": "Дивитись портфоліо",
   "hero.trust": "Нам довіряють 120+ компаній у світі",
@@ -118,7 +126,8 @@ const uk: Dict = {
 
   "services.eyebrow": "Ключова експертиза",
   "services.title": "Що ми робимо",
-  "services.intro": "Ми не просто пишемо код. Ми проектуємо технічну основу, що забезпечує швидке зростання та стабільну конверсію.",
+  "services.intro":
+    "Ми не просто пишемо код. Ми проектуємо технічну основу, що забезпечує швидке зростання та стабільну конверсію.",
   "services.exploreAll": "Усі послуги",
   "services.cta": "Запитати ціну",
 
@@ -151,14 +160,18 @@ const uk: Dict = {
 
   "about.title": "Про APARTNER.PRO",
   "about.eyebrow": "Студія",
-  "about.lead": "Ми — команда сеньйор-розробників та дизайнерів з Києва. Працюємо з клієнтами по Європі та США з 2018 року. Офіційний партнер Thirty Bees та Agile ServeX Inc.",
+  "about.lead":
+    "Ми — команда сеньйор-розробників та дизайнерів з Києва. Працюємо з клієнтами по Європі та США з 2018 року. Офіційний партнер Thirty Bees та Agile ServeX Inc.",
   "about.values.title": "Як ми працюємо",
   "about.value.1.t": "Інженерія в основі",
-  "about.value.1.d": "Чиста архітектура, типізований код, автотести. Ваша платформа має бути перевагою, а не технічним боргом.",
+  "about.value.1.d":
+    "Чиста архітектура, типізований код, автотести. Ваша платформа має бути перевагою, а не технічним боргом.",
   "about.value.2.t": "Фокус на конверсії",
-  "about.value.2.d": "Кожна сторінка, кожен flow вимірюється у бізнес-результатах — дохід, ліди, утримання.",
+  "about.value.2.d":
+    "Кожна сторінка, кожен flow вимірюється у бізнес-результатах — дохід, ліди, утримання.",
   "about.value.3.t": "Довгострокове партнерство",
-  "about.value.3.d": "Ми супроводжуємо те, що створюємо. 90% клієнтів повертаються за наступним проектом.",
+  "about.value.3.d":
+    "Ми супроводжуємо те, що створюємо. 90% клієнтів повертаються за наступним проектом.",
   "about.stats.years": "Років на ринку",
   "about.stats.projects": "Реалізованих проектів",
   "about.stats.clients": "Повторних клієнтів",
@@ -191,7 +204,8 @@ const ru: Dict = {
   "hero.title.1": "МЫ СОЗДАЁМ",
   "hero.title.2": "СИСТЕМЫ, КОТОРЫЕ",
   "hero.title.3": "МАСШТАБИРУЮТ БИЗНЕС.",
-  "hero.subtitle": "Разработка на Laravel, PrestaShop, WordPress и индивидуальные веб-приложения для амбициозных команд. Скорость, конверсия, надёжность.",
+  "hero.subtitle":
+    "Разработка на Laravel, PrestaShop, WordPress и индивидуальные веб-приложения для амбициозных команд. Скорость, конверсия, надёжность.",
   "hero.cta.primary": "Начать проект",
   "hero.cta.secondary": "Смотреть портфолио",
   "hero.trust": "Нам доверяют 120+ компаний по миру",
@@ -200,7 +214,8 @@ const ru: Dict = {
 
   "services.eyebrow": "Ключевая экспертиза",
   "services.title": "Что мы делаем",
-  "services.intro": "Мы не просто пишем код. Мы проектируем техническую основу для быстрого роста и стабильной конверсии.",
+  "services.intro":
+    "Мы не просто пишем код. Мы проектируем техническую основу для быстрого роста и стабильной конверсии.",
   "services.exploreAll": "Все услуги",
   "services.cta": "Запросить цену",
 
@@ -233,14 +248,18 @@ const ru: Dict = {
 
   "about.title": "О APARTNER.PRO",
   "about.eyebrow": "Студия",
-  "about.lead": "Мы — команда senior-разработчиков и дизайнеров из Киева. Работаем с клиентами по Европе и США с 2018 года. Официальный партнёр Thirty Bees и Agile ServeX Inc.",
+  "about.lead":
+    "Мы — команда senior-разработчиков и дизайнеров из Киева. Работаем с клиентами по Европе и США с 2018 года. Официальный партнёр Thirty Bees и Agile ServeX Inc.",
   "about.values.title": "Как мы работаем",
   "about.value.1.t": "Инженерия в основе",
-  "about.value.1.d": "Чистая архитектура, типизированный код, автотесты. Платформа должна быть преимуществом, а не техническим долгом.",
+  "about.value.1.d":
+    "Чистая архитектура, типизированный код, автотесты. Платформа должна быть преимуществом, а не техническим долгом.",
   "about.value.2.t": "Фокус на конверсии",
-  "about.value.2.d": "Каждая страница, каждый flow измеряется бизнес-результатами — доход, лиды, удержание.",
+  "about.value.2.d":
+    "Каждая страница, каждый flow измеряется бизнес-результатами — доход, лиды, удержание.",
   "about.value.3.t": "Долгосрочное партнёрство",
-  "about.value.3.d": "Мы поддерживаем то, что создаём. 90% клиентов возвращаются за следующим проектом.",
+  "about.value.3.d":
+    "Мы поддерживаем то, что создаём. 90% клиентов возвращаются за следующим проектом.",
   "about.stats.years": "Лет на рынке",
   "about.stats.projects": "Реализованных проектов",
   "about.stats.clients": "Повторных клиентов",

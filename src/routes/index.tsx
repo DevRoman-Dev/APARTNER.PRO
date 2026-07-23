@@ -9,7 +9,8 @@ export const Route = createFileRoute("/")({
       locale: "en",
       path: "/",
       title: "APARTNER.PRO — Laravel, PrestaShop & WordPress Development Studio",
-      description: "Web development studio since 2018. Laravel, PrestaShop, WordPress, mobile apps and UX/UI design that converts. Get a free quote in 24h.",
+      description:
+        "Web development studio since 2018. Laravel, PrestaShop, WordPress, mobile apps and UX/UI design that converts. Get a free quote in 24h.",
     }),
     scripts: [
       {

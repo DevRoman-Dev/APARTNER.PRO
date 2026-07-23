@@ -7,15 +7,18 @@ import { type Locale } from "@/lib/i18n";
 const titles: Record<Locale, { title: string; description: string }> = {
   en: {
     title: "APARTNER.PRO — Laravel, PrestaShop & WordPress Development Studio",
-    description: "Web development studio since 2018. Laravel, PrestaShop, WordPress and mobile apps that convert.",
+    description:
+      "Web development studio since 2018. Laravel, PrestaShop, WordPress and mobile apps that convert.",
   },
   uk: {
     title: "APARTNER.PRO — Студія розробки Laravel, PrestaShop, WordPress",
-    description: "Студія веб-розробки з 2018 року. Laravel, PrestaShop, WordPress, мобільні застосунки та дизайн з фокусом на конверсію. Безкоштовний прорахунок за 24 години.",
+    description:
+      "Студія веб-розробки з 2018 року. Laravel, PrestaShop, WordPress, мобільні застосунки та дизайн з фокусом на конверсію. Безкоштовний прорахунок за 24 години.",
   },
   ru: {
     title: "APARTNER.PRO — Студия разработки Laravel, PrestaShop, WordPress",
-    description: "Студия веб-разработки с 2018 года. Laravel, PrestaShop, WordPress, мобильные приложения и дизайн с фокусом на конверсию. Бесплатный расчёт за 24 часа.",
+    description:
+      "Студия веб-разработки с 2018 года. Laravel, PrestaShop, WordPress, мобильные приложения и дизайн с фокусом на конверсию. Бесплатный расчёт за 24 часа.",
   },
 };
 

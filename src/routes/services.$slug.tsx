@@ -45,7 +45,12 @@ export const Route = createFileRoute("/services/$slug")({
         bestRating: 5,
         worstRating: 1,
       };
-      serviceLd.offers = { "@type": "Offer", priceCurrency: "USD", description: extras.startingFrom.en, url };
+      serviceLd.offers = {
+        "@type": "Offer",
+        priceCurrency: "USD",
+        description: extras.startingFrom.en,
+        url,
+      };
     }
     scripts.push({ type: "application/ld+json", children: JSON.stringify(serviceLd) });
     if (extras) {

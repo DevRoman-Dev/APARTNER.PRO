@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -78,7 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "APARTNER.PRO — Web Development Studio" },
-      { name: "description", content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts." },
+      {
+        name: "description",
+        content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts.",
+      },
       { name: "author", content: "APARTNER.PRO" },
       { property: "og:site_name", content: "APARTNER.PRO" },
       { property: "og:type", content: "website" },
@@ -86,10 +90,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "theme-color", content: "#0a0a0c" },
       { property: "og:title", content: "APARTNER.PRO — Web Development Studio" },
       { name: "twitter:title", content: "APARTNER.PRO — Web Development Studio" },
-      { property: "og:description", content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts." },
-      { name: "twitter:description", content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
+      {
+        property: "og:description",
+        content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts.",
+      },
+      {
+        name: "twitter:description",
+        content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts.",
+      },
+      {
+        property: "og:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9",
+      },
+      {
+        name: "twitter:image",
+        content:
+          "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9",
+      },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -120,6 +138,7 @@ function RootShell({ children }: { children: ReactNode }) {
       <body>
         {children}
         <Scripts />
+        <Analytics />
       </body>
     </html>
   );

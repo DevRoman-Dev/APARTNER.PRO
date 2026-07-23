@@ -8,11 +8,13 @@ const meta: Record<Locale, { title: string; description: string }> = {
   en: { title: "About", description: "About APARTNER.PRO." },
   uk: {
     title: "Про студію APARTNER.PRO",
-    description: "Київська студія веб-розробки, працює глобально з 2018 року. Офіційний партнер Thirty Bees та Agile ServeX Inc.",
+    description:
+      "Київська студія веб-розробки, працює глобально з 2018 року. Офіційний партнер Thirty Bees та Agile ServeX Inc.",
   },
   ru: {
     title: "О студии APARTNER.PRO",
-    description: "Киевская студия веб-разработки, работает глобально с 2018 года. Официальный партнёр Thirty Bees и Agile ServeX Inc.",
+    description:
+      "Киевская студия веб-разработки, работает глобально с 2018 года. Официальный партнёр Thirty Bees и Agile ServeX Inc.",
   },
 };
 

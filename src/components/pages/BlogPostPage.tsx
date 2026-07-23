@@ -18,8 +18,15 @@ function renderBody(body: string) {
       const ordered = /^\d/.test(b.trim());
       const ListTag = ordered ? "ol" : "ul";
       return (
-        <ListTag key={i} className={`${ordered ? "list-decimal" : "list-disc"} pl-6 space-y-2 my-4 text-foreground/85`}>
-          {items.map((it, j) => <li key={j} className="leading-relaxed">{it}</li>)}
+        <ListTag
+          key={i}
+          className={`${ordered ? "list-decimal" : "list-disc"} pl-6 space-y-2 my-4 text-foreground/85`}
+        >
+          {items.map((it, j) => (
+            <li key={j} className="leading-relaxed">
+              {it}
+            </li>
+          ))}
         </ListTag>
       );
     }
@@ -53,7 +60,9 @@ export function BlogPostPage({ locale, post }: { locale: Locale; post: BlogPost 
             <span>·</span>
             <span>{fmt(post.date)}</span>
             <span>·</span>
-            <span>{post.readMin} {t(locale, "blog.minRead")}</span>
+            <span>
+              {post.readMin} {t(locale, "blog.minRead")}
+            </span>
           </div>
           <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight leading-[1.05] mb-8">
             {post.title[locale]}

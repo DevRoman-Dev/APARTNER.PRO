@@ -20,9 +20,7 @@ export function BlogPage({ locale }: { locale: Locale }) {
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight mt-4 mb-6 leading-[0.95]">
             {t(locale, "blog.title")}
           </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl">
-            {t(locale, "blog.intro")}
-          </p>
+          <p className="text-lg text-muted-foreground max-w-2xl">{t(locale, "blog.intro")}</p>
         </div>
       </section>
 
@@ -46,14 +44,14 @@ export function BlogPage({ locale }: { locale: Locale }) {
               <div className="flex gap-4 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-4">
                 <span>{fmt(featured.date)}</span>
                 <span>·</span>
-                <span>{featured.readMin} {t(locale, "blog.minRead")}</span>
+                <span>
+                  {featured.readMin} {t(locale, "blog.minRead")}
+                </span>
               </div>
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight leading-tight group-hover:text-accent transition-colors mb-4">
                 {featured.title[locale]}
               </h2>
-              <p className="text-muted-foreground leading-relaxed">
-                {featured.excerpt[locale]}
-              </p>
+              <p className="text-muted-foreground leading-relaxed">{featured.excerpt[locale]}</p>
               <span className="inline-block mt-6 text-xs font-bold uppercase tracking-widest text-accent">
                 {t(locale, "blog.readMore")} →
               </span>
@@ -82,17 +80,19 @@ export function BlogPage({ locale }: { locale: Locale }) {
                 />
               </div>
               <div className="p-8 flex flex-col flex-1">
-              <div className="flex gap-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
-                <span className="text-accent font-bold">{p.category[locale]}</span>
-                <span>·</span>
-                <span>{p.readMin} {t(locale, "blog.minRead")}</span>
-              </div>
-              <h3 className="text-xl font-bold mb-4 group-hover:text-accent transition-colors leading-snug flex-1">
-                {p.title[locale]}
-              </h3>
-              <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
-                {fmt(p.date)}
-              </span>
+                <div className="flex gap-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground mb-6">
+                  <span className="text-accent font-bold">{p.category[locale]}</span>
+                  <span>·</span>
+                  <span>
+                    {p.readMin} {t(locale, "blog.minRead")}
+                  </span>
+                </div>
+                <h3 className="text-xl font-bold mb-4 group-hover:text-accent transition-colors leading-snug flex-1">
+                  {p.title[locale]}
+                </h3>
+                <span className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground">
+                  {fmt(p.date)}
+                </span>
               </div>
             </Link>
           ))}

@@ -5,14 +5,19 @@ import { pageHead } from "@/lib/seo";
 import type { Locale } from "@/lib/i18n";
 
 const meta: Record<Locale, { title: string; description: string }> = {
-  en: { title: "Services — Laravel, PrestaShop, WordPress, Mobile, SEO", description: "Full-cycle web development services." },
+  en: {
+    title: "Services — Laravel, PrestaShop, WordPress, Mobile, SEO",
+    description: "Full-cycle web development services.",
+  },
   uk: {
     title: "Послуги — Laravel, PrestaShop, WordPress, мобільні застосунки, SEO",
-    description: "Повний цикл веб-розробки: Laravel, CakePHP, PrestaShop, WordPress, мобільні застосунки, UX/UI дизайн та технічне SEO.",
+    description:
+      "Повний цикл веб-розробки: Laravel, CakePHP, PrestaShop, WordPress, мобільні застосунки, UX/UI дизайн та технічне SEO.",
   },
   ru: {
     title: "Услуги — Laravel, PrestaShop, WordPress, мобильные, SEO",
-    description: "Полный цикл веб-разработки: Laravel, CakePHP, PrestaShop, WordPress, мобильные приложения, UX/UI дизайн и техническое SEO.",
+    description:
+      "Полный цикл веб-разработки: Laravel, CakePHP, PrestaShop, WordPress, мобильные приложения, UX/UI дизайн и техническое SEO.",
   },
 };
 

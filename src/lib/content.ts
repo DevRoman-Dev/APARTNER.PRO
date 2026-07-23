@@ -10,7 +10,6 @@ import wordpressBlocksImg from "@/assets/blog/wordpress-blocks.jpg";
 import mobileLaunchImg from "@/assets/blog/mobile-launch.jpg";
 import seoRankingsImg from "@/assets/blog/seo-rankings.jpg";
 
-
 export interface ServiceItem {
   slug: string;
   num: string;
@@ -44,9 +43,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "Создаём Laravel-приложения production-уровня: SaaS-платформы, внутренние инструменты, маркетплейсы и REST/GraphQL API. Чистая архитектура, автотесты, CI/CD, масштабирование от MVP до миллионов пользователей.",
     },
     deliverables: {
-      en: ["Architecture & data modelling", "Backend API (REST/GraphQL)", "Admin dashboards", "Auth, billing, queues", "CI/CD & deployment", "Documentation & support"],
-      uk: ["Архітектура та модель даних", "Backend API (REST/GraphQL)", "Адмін-панелі", "Авторизація, біллінг, черги", "CI/CD та деплой", "Документація і підтримка"],
-      ru: ["Архитектура и модель данных", "Backend API (REST/GraphQL)", "Админ-панели", "Авторизация, биллинг, очереди", "CI/CD и деплой", "Документация и поддержка"],
+      en: [
+        "Architecture & data modelling",
+        "Backend API (REST/GraphQL)",
+        "Admin dashboards",
+        "Auth, billing, queues",
+        "CI/CD & deployment",
+        "Documentation & support",
+      ],
+      uk: [
+        "Архітектура та модель даних",
+        "Backend API (REST/GraphQL)",
+        "Адмін-панелі",
+        "Авторизація, біллінг, черги",
+        "CI/CD та деплой",
+        "Документація і підтримка",
+      ],
+      ru: [
+        "Архитектура и модель данных",
+        "Backend API (REST/GraphQL)",
+        "Админ-панели",
+        "Авторизация, биллинг, очереди",
+        "CI/CD и деплой",
+        "Документация и поддержка",
+      ],
     },
     stack: ["Laravel", "CakePHP", "PostgreSQL", "Redis", "Docker", "AWS"],
     metaDescription: {
@@ -75,9 +95,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "От запуска магазина до multi-shop enterprise-конфигураций. Наши модули опубликованы на официальном PrestaShop Addons Marketplace. Делаем миграции, оптимизацию, кастомный checkout и интеграции с ERP.",
     },
     deliverables: {
-      en: ["Custom theme development", "Custom modules", "Migrations 1.6 → 8.x", "Performance optimization", "Payment & ERP integrations", "24/7 support"],
-      uk: ["Розробка тем", "Кастомні модулі", "Міграції 1.6 → 8.x", "Оптимізація швидкості", "Платежі та ERP-інтеграції", "Підтримка 24/7"],
-      ru: ["Разработка тем", "Кастомные модули", "Миграции 1.6 → 8.x", "Оптимизация скорости", "Платежи и ERP-интеграции", "Поддержка 24/7"],
+      en: [
+        "Custom theme development",
+        "Custom modules",
+        "Migrations 1.6 → 8.x",
+        "Performance optimization",
+        "Payment & ERP integrations",
+        "24/7 support",
+      ],
+      uk: [
+        "Розробка тем",
+        "Кастомні модулі",
+        "Міграції 1.6 → 8.x",
+        "Оптимізація швидкості",
+        "Платежі та ERP-інтеграції",
+        "Підтримка 24/7",
+      ],
+      ru: [
+        "Разработка тем",
+        "Кастомные модули",
+        "Миграции 1.6 → 8.x",
+        "Оптимизация скорости",
+        "Платежи и ERP-интеграции",
+        "Поддержка 24/7",
+      ],
     },
     stack: ["PrestaShop", "Thirty Bees", "Smarty", "Symfony", "MySQL"],
     metaDescription: {
@@ -106,9 +147,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "Создаём быстрые сайты на WordPress: кастомные Gutenberg-блоки, редакторские workflow на ACF, WooCommerce с кастомным checkout, headless-конфигурации на Next.js или TanStack.",
     },
     deliverables: {
-      en: ["Custom themes & blocks", "WooCommerce stores", "Headless WordPress", "Performance & Core Web Vitals", "SEO foundation", "Maintenance & security"],
-      uk: ["Кастомні теми та блоки", "WooCommerce-магазини", "Headless WordPress", "Швидкість та Core Web Vitals", "SEO-основа", "Підтримка та безпека"],
-      ru: ["Кастомные темы и блоки", "WooCommerce-магазины", "Headless WordPress", "Скорость и Core Web Vitals", "SEO-основа", "Поддержка и безопасность"],
+      en: [
+        "Custom themes & blocks",
+        "WooCommerce stores",
+        "Headless WordPress",
+        "Performance & Core Web Vitals",
+        "SEO foundation",
+        "Maintenance & security",
+      ],
+      uk: [
+        "Кастомні теми та блоки",
+        "WooCommerce-магазини",
+        "Headless WordPress",
+        "Швидкість та Core Web Vitals",
+        "SEO-основа",
+        "Підтримка та безпека",
+      ],
+      ru: [
+        "Кастомные темы и блоки",
+        "WooCommerce-магазины",
+        "Headless WordPress",
+        "Скорость и Core Web Vitals",
+        "SEO-основа",
+        "Поддержка и безопасность",
+      ],
     },
     stack: ["WordPress", "WooCommerce", "ACF", "Gutenberg", "Next.js"],
     metaDescription: {
@@ -137,9 +199,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "Проектируем, разрабатываем и запускаем мобильные приложения, которыми пользуются каждый день. Offline-архитектура, push-уведомления, in-app платежи, deep links и публикация в App Store / Play Store.",
     },
     deliverables: {
-      en: ["UX research & prototyping", "iOS & Android apps", "Backend API", "Push & analytics", "Store submission", "Updates & support"],
-      uk: ["UX-дослідження та прототип", "iOS та Android-додатки", "Backend API", "Push та аналітика", "Публікація в сторах", "Оновлення та підтримка"],
-      ru: ["UX-исследование и прототип", "iOS и Android-приложения", "Backend API", "Push и аналитика", "Публикация в сторах", "Обновления и поддержка"],
+      en: [
+        "UX research & prototyping",
+        "iOS & Android apps",
+        "Backend API",
+        "Push & analytics",
+        "Store submission",
+        "Updates & support",
+      ],
+      uk: [
+        "UX-дослідження та прототип",
+        "iOS та Android-додатки",
+        "Backend API",
+        "Push та аналітика",
+        "Публікація в сторах",
+        "Оновлення та підтримка",
+      ],
+      ru: [
+        "UX-исследование и прототип",
+        "iOS и Android-приложения",
+        "Backend API",
+        "Push и аналитика",
+        "Публикация в сторах",
+        "Обновления и поддержка",
+      ],
     },
     stack: ["React Native", "Swift", "Kotlin", "Firebase", "GraphQL"],
     metaDescription: {
@@ -168,9 +251,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "Создаём продукты, которые выглядят премиально и конвертируют. Исследование пользователей, IA, дизайн-системы во Figma, прототипы и handoff с токенами под разработку.",
     },
     deliverables: {
-      en: ["User research & personas", "Wireframes & prototypes", "Visual design", "Design system", "Brand identity", "Developer handoff"],
-      uk: ["Дослідження та персонажі", "Wireframe та прототипи", "Візуальний дизайн", "Дизайн-система", "Брендинг", "Handoff для розробників"],
-      ru: ["Исследование и персонажи", "Wireframe и прототипы", "Визуальный дизайн", "Дизайн-система", "Брендинг", "Handoff для разработчиков"],
+      en: [
+        "User research & personas",
+        "Wireframes & prototypes",
+        "Visual design",
+        "Design system",
+        "Brand identity",
+        "Developer handoff",
+      ],
+      uk: [
+        "Дослідження та персонажі",
+        "Wireframe та прототипи",
+        "Візуальний дизайн",
+        "Дизайн-система",
+        "Брендинг",
+        "Handoff для розробників",
+      ],
+      ru: [
+        "Исследование и персонажи",
+        "Wireframe и прототипы",
+        "Визуальный дизайн",
+        "Дизайн-система",
+        "Брендинг",
+        "Handoff для разработчиков",
+      ],
     },
     stack: ["Figma", "Framer", "Adobe Suite", "Webflow"],
     metaDescription: {
@@ -199,9 +303,30 @@ export const SERVICES: ServiceItem[] = [
       ru: "Аудитируем, исправляем, ускоряем. Lighthouse, LCP, INP, CLS. Структурированные данные, hreflang для международных сайтов, контентная архитектура и трекинг ключевых слов с реальным ростом позиций.",
     },
     deliverables: {
-      en: ["Technical SEO audit", "Core Web Vitals fixes", "Structured data (JSON-LD)", "International SEO (hreflang)", "Content architecture", "Monthly tracking & reporting"],
-      uk: ["Технічний SEO-аудит", "Виправлення Core Web Vitals", "Структуровані дані (JSON-LD)", "Міжнародне SEO (hreflang)", "Контентна архітектура", "Щомісячний трекінг та звіти"],
-      ru: ["Технический SEO-аудит", "Исправление Core Web Vitals", "Структурированные данные (JSON-LD)", "Международное SEO (hreflang)", "Контентная архитектура", "Ежемесячный трекинг и отчёты"],
+      en: [
+        "Technical SEO audit",
+        "Core Web Vitals fixes",
+        "Structured data (JSON-LD)",
+        "International SEO (hreflang)",
+        "Content architecture",
+        "Monthly tracking & reporting",
+      ],
+      uk: [
+        "Технічний SEO-аудит",
+        "Виправлення Core Web Vitals",
+        "Структуровані дані (JSON-LD)",
+        "Міжнародне SEO (hreflang)",
+        "Контентна архітектура",
+        "Щомісячний трекінг та звіти",
+      ],
+      ru: [
+        "Технический SEO-аудит",
+        "Исправление Core Web Vitals",
+        "Структурированные данные (JSON-LD)",
+        "Международное SEO (hreflang)",
+        "Контентная архитектура",
+        "Ежемесячный трекинг и отчёты",
+      ],
     },
     stack: ["Lighthouse", "Search Console", "Semrush", "Ahrefs", "Schema.org"],
     metaDescription: {
@@ -267,7 +392,11 @@ export const PROJECTS: ProjectItemWithImage[] = [
     year: "2023",
     image: archstudioImg,
     url: "https://archstudio.ua",
-    category: { en: "Portfolio / Architecture", uk: "Портфоліо / Архітектура", ru: "Портфолио / Архитектура" },
+    category: {
+      en: "Portfolio / Architecture",
+      uk: "Портфоліо / Архітектура",
+      ru: "Портфолио / Архитектура",
+    },
     summary: {
       en: "Award-winning architecture firm portfolio with immersive project galleries, 360° virtual tours, and a custom CMS for managing 200+ case studies.",
       uk: "Портфоліо архітектурного бюро з immersive-галереями проєктів, 360° віртуальними турами та кастомною CMS для керування 200+ кейсами.",
