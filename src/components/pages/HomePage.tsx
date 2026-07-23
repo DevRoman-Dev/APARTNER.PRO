@@ -195,9 +195,9 @@ export function HomePage({ locale }: { locale: Locale }) {
                     <span className="font-mono text-[10px] text-muted-foreground shrink-0 hidden sm:inline">
                       {new Date(p.date).toLocaleDateString(locale === "en" ? "en-US" : locale === "uk" ? "uk-UA" : "ru-RU", { month: "short", day: "numeric", timeZone: "UTC" }).toUpperCase()}
                     </span>
-                    <h4 className="text-base sm:text-lg font-bold group-hover:text-accent transition-colors break-words line-clamp-2">
+                    <h3 className="text-base sm:text-lg font-bold group-hover:text-accent transition-colors break-words line-clamp-2">
                       {p.title[locale]}
-                    </h4>
+                    </h3>
                   </div>
                   <span className="size-8 border border-border rounded-full grid place-items-center text-sm shrink-0">→</span>
                 </Link>

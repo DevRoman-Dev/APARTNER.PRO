@@ -18,9 +18,9 @@ export function Footer({ locale }: { locale: Locale }) {
           </p>
         </div>
         <div>
-          <h5 className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
+          <span className="block text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
             {t(locale, "footer.nav")}
-          </h5>
+          </span>
           <ul className="space-y-2 text-sm">
             <li><Link to={localePath(locale, "/services")} className="hover:text-accent">{t(locale, "nav.services")}</Link></li>
             <li><Link to={localePath(locale, "/portfolio")} className="hover:text-accent">{t(locale, "nav.portfolio")}</Link></li>
@@ -29,9 +29,9 @@ export function Footer({ locale }: { locale: Locale }) {
           </ul>
         </div>
         <div>
-          <h5 className="text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
+          <span className="block text-[10px] font-mono uppercase tracking-widest text-muted-foreground mb-4">
             {t(locale, "footer.contact")}
-          </h5>
+          </span>
           <ul className="space-y-2 text-sm">
             <li><a href="mailto:info@apartner.pro" className="hover:text-accent">info@apartner.pro</a></li>
             <li><a href="tel:+380938800822" className="hover:text-accent">+380 93 88 00 822</a></li>
