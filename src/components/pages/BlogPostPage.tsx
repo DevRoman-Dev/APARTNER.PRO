@@ -5,13 +5,13 @@ import { CtaSection } from "@/components/CtaSection";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { TableOfContents } from "@/components/ui/TableOfContents";
 
-/** Turns a heading text into a URL-safe anchor id */
+/** Turns a heading text into a URL-safe anchor id (works for Cyrillic too) */
 function slugify(text: string): string {
   return text
-    .toLowerCase()
     .trim()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-");
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\u0400-\u04FF-]/g, ""); // keep ASCII words + Cyrillic + hyphens
 }
 
 /** Extracts all ## headings from a markdown body string */
