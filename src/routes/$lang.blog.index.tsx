@@ -16,7 +16,7 @@ const meta: Record<Locale, { title: string; description: string }> = {
   },
 };
 
-export const Route = createFileRoute("/$lang/blog")({
+export const Route = createFileRoute("/$lang/blog/")({
   head: ({ params }) => {
     const locale = params.lang as Locale;
     return pageHead({ locale, path: "/blog", ...meta[locale] });

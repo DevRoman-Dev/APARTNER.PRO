@@ -3,7 +3,7 @@ import { BlogPage } from "@/components/pages/BlogPage";
 import { SiteLayout } from "@/components/SiteLayout";
 import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/blog")({
+export const Route = createFileRoute("/blog/")({
   head: () => pageHead({
     locale: "en",
     path: "/blog",
