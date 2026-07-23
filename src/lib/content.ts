@@ -497,7 +497,7 @@ export const POSTS: BlogPost[] = [
     },
   },
   {
-    slug: "prestashop-vs-shopify",
+    slug: "why-choose-prestashop-over-shopify",
     cover: prestashopHeadlessImg,
     date: "2026-07-23",
     readMin: 10,
