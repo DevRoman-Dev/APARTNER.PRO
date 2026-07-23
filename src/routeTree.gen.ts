@@ -21,6 +21,7 @@ import { Route as LangAboutRouteImport } from './routes/$lang.about'
 import { Route as LangContactRouteImport } from './routes/$lang.contact'
 import { Route as LangPortfolioRouteImport } from './routes/$lang.portfolio'
 import { Route as LangServicesRouteImport } from './routes/$lang.services'
+import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as BlogIndexRouteImport } from './routes/blog.index'
 import { Route as BlogSlugRouteImport } from './routes/blog.$slug'
 import { Route as ServicesIndexRouteImport } from './routes/services.index'
@@ -90,6 +91,11 @@ const LangServicesRoute = LangServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => LangRoute,
 } as any)
+const ApiContactRoute = ApiContactRouteImport.update({
+  id: '/api/contact',
+  path: '/api/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const BlogIndexRoute = BlogIndexRouteImport.update({
   id: '/blog/',
   path: '/blog/',
@@ -143,6 +149,7 @@ export interface FileRoutesByFullPath {
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
   '/$lang/services': typeof LangServicesRouteWithChildren
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
@@ -162,6 +169,7 @@ export interface FileRoutesByTo {
   '/$lang/about': typeof LangAboutRoute
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang': typeof LangIndexRoute
@@ -185,6 +193,7 @@ export interface FileRoutesById {
   '/$lang/contact': typeof LangContactRoute
   '/$lang/portfolio': typeof LangPortfolioRoute
   '/$lang/services': typeof LangServicesRouteWithChildren
+  '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
   '/services/$slug': typeof ServicesSlugRoute
   '/$lang/': typeof LangIndexRoute
@@ -209,6 +218,7 @@ export interface FileRouteTypes {
     | '/$lang/contact'
     | '/$lang/portfolio'
     | '/$lang/services'
+    | '/api/contact'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang/'
@@ -228,6 +238,7 @@ export interface FileRouteTypes {
     | '/$lang/about'
     | '/$lang/contact'
     | '/$lang/portfolio'
+    | '/api/contact'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang'
@@ -250,6 +261,7 @@ export interface FileRouteTypes {
     | '/$lang/contact'
     | '/$lang/portfolio'
     | '/$lang/services'
+    | '/api/contact'
     | '/blog/$slug'
     | '/services/$slug'
     | '/$lang/'
@@ -269,6 +281,7 @@ export interface RootRouteChildren {
   PortfolioRoute: typeof PortfolioRoute
   ServicesRoute: typeof ServicesRouteWithChildren
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  ApiContactRoute: typeof ApiContactRoute
   BlogSlugRoute: typeof BlogSlugRoute
   BlogIndexRoute: typeof BlogIndexRoute
 }
@@ -358,6 +371,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/$lang/services'
       preLoaderRoute: typeof LangServicesRouteImport
       parentRoute: typeof LangRoute
+    }
+    '/api/contact': {
+      id: '/api/contact'
+      path: '/api/contact'
+      fullPath: '/api/contact'
+      preLoaderRoute: typeof ApiContactRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/blog/': {
       id: '/blog/'
@@ -476,6 +496,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortfolioRoute: PortfolioRoute,
   ServicesRoute: ServicesRouteWithChildren,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  ApiContactRoute: ApiContactRoute,
   BlogSlugRoute: BlogSlugRoute,
   BlogIndexRoute: BlogIndexRoute,
 }
