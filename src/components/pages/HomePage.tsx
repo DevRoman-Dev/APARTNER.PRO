@@ -11,7 +11,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <header className="relative pt-24 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col gap-6 max-w-[900px]">
-            <div className="animate-reveal">
+            <div>
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent font-bold">
                 {t(locale, "hero.eyebrow")}
               </span>
