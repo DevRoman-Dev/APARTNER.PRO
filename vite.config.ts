@@ -12,6 +12,22 @@ export default defineConfig({
       drop: ["console", "debugger"],
       legalComments: "none",
     },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks(id) {
+            if (id.includes("node_modules")) {
+              if (id.includes("react") || id.includes("react-dom")) {
+                return "vendor-react";
+              }
+              if (id.includes("@tanstack")) {
+                return "vendor-router";
+              }
+            }
+          },
+        },
+      },
+    },
   },
   tanstackStart: {
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
