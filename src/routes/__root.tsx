@@ -9,7 +9,7 @@ import {
 } from "@tanstack/react-router";
 import { useEffect, type ReactNode } from "react";
 
-import appCss from "../styles.css?url";
+import appCssInline from "../styles.css?inline";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 import { SiteLayout } from "@/components/SiteLayout";
@@ -90,7 +90,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-      { rel: "stylesheet", href: appCss },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-400-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-500-normal.woff2", crossOrigin: "anonymous" },
       { rel: "preload", as: "font", type: "font/woff2", href: "/fonts/inter/inter-latin-700-normal.woff2", crossOrigin: "anonymous" },
@@ -112,6 +111,7 @@ function RootShell({ children }: { children: ReactNode }) {
     <html lang={lang}>
       <head>
         <HeadContent />
+        <style dangerouslySetInnerHTML={{ __html: appCssInline }} />
       </head>
       <body>
         {children}
