@@ -35,10 +35,17 @@ export default defineConfig({
     server: { entry: "server" },
   },
   nitro: {
+    compressPublicAssets: true,
     routeRules: {
       '/**': { 
         isr: 86400,
         earlyHints: true
+      },
+      '/assets/**': {
+        headers: { 'cache-control': 'public, max-age=31536000, immutable' }
+      },
+      '/fonts/**': {
+        headers: { 'cache-control': 'public, max-age=31536000, immutable' }
       }
     }
   },
