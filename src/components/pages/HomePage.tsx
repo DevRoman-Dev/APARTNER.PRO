@@ -22,7 +22,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       <header className="relative pt-24 pb-20 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex flex-col gap-6 max-w-[900px]">
-            <div className="animate-reveal">
+            <div className="md:animate-reveal">
               <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent font-bold">
                 {t(locale, "hero.eyebrow")}
               </span>
@@ -32,10 +32,10 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <span className="text-foreground/15">{t(locale, "hero.title.3")}</span>
               </h1>
             </div>
-            <p className="animate-reveal text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed text-pretty">
+            <p className="md:animate-reveal text-lg md:text-xl text-muted-foreground max-w-[600px] leading-relaxed text-pretty">
               {t(locale, "hero.subtitle")}
             </p>
-            <div className="animate-reveal flex flex-wrap gap-4 mt-4">
+            <div className="md:animate-reveal flex flex-wrap gap-4 mt-4">
               <Link
                 to={localePath(locale, "/contact")}
                 className="h-14 px-8 bg-accent text-accent-foreground font-bold rounded-sm hover:translate-y-[-2px] transition-transform flex items-center gap-3"
