@@ -82,8 +82,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:title", content: "APARTNER.PRO — Web Development Studio" },
       { property: "og:description", content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts." },
       { name: "twitter:description", content: "Laravel, PrestaShop, WordPress, mobile apps and design that converts." },
-      { property: "og:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
-      { name: "twitter:image", content: "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/a6d9bdef-4018-4670-8a17-9e70a7abebe9" },
+      { property: "og:image", content: "https://studio.apartner.pro/og-image.png" },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://studio.apartner.pro/og-image.png" },
     ],
     links: [
       { rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
