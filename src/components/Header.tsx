@@ -57,6 +57,7 @@ export function Header({ locale }: Props) {
                 {i > 0 && <span className="opacity-20">/</span>}
                 <Link
                   to={localePath(l, baseSubpath)}
+                  onClick={() => localStorage.setItem("preferred_locale", l)}
                   className={
                     l === locale
                       ? "text-accent"
@@ -101,7 +102,10 @@ export function Header({ locale }: Props) {
                 <Link
                   key={l}
                   to={localePath(l, baseSubpath)}
-                  onClick={() => setOpen(false)}
+                  onClick={() => {
+                    localStorage.setItem("preferred_locale", l);
+                    setOpen(false);
+                  }}
                   className={`text-xs font-mono uppercase ${l === locale ? "text-accent" : ""}`}
                 >
                   {l}

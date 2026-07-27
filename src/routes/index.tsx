@@ -4,6 +4,24 @@ import { SiteLayout } from "@/components/SiteLayout";
 import { pageHead } from "@/lib/seo";
 import { BASE_URL } from "@/lib/config";
 
+import { useEffect } from "react";
+
+function RootPage() {
+  useEffect(() => {
+    const savedLocale = localStorage.getItem("preferred_locale");
+    // If user has a saved non-English locale and they landed precisely on "/", redirect them.
+    if (savedLocale && savedLocale !== "en" && window.location.pathname === "/") {
+      window.location.replace(`/${savedLocale}`);
+    }
+  }, []);
+
+  return (
+    <SiteLayout locale="en">
+      <HomePage locale="en" />
+    </SiteLayout>
+  );
+}
+
 export const Route = createFileRoute("/")({
   head: () => pageHead({
     locale: "en",
@@ -21,9 +39,5 @@ export const Route = createFileRoute("/")({
       sameAs: ["https://www.linkedin.com/company/apartner/"],
     },
   }),
-  component: () => (
-    <SiteLayout locale="en">
-      <HomePage locale="en" />
-    </SiteLayout>
-  ),
+  component: RootPage,
 });
