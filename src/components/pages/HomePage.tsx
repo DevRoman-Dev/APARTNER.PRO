@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import { ArrowRight } from "lucide-react";
 import { type Locale, localePath, t } from "@/lib/i18n";
 import { lazy, Suspense } from "react";
 
@@ -42,7 +41,10 @@ export function HomePage({ locale }: { locale: Locale }) {
                 className="h-14 px-8 bg-accent text-accent-foreground font-bold rounded-sm hover:translate-y-[-2px] transition-transform flex items-center gap-3"
               >
                 {t(locale, "hero.cta.primary")}
-                <ArrowRight className="size-5" />
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="size-5">
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
               </Link>
               <Link
                 to={localePath(locale, "/portfolio")}
