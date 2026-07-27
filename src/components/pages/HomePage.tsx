@@ -38,6 +38,7 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div className="md:animate-reveal flex flex-wrap gap-4 mt-4">
               <Link
                 to={localePath(locale, "/contact")}
+                preload="intent"
                 className="h-14 px-8 bg-accent text-accent-foreground font-bold rounded-sm hover:translate-y-[-2px] transition-transform flex items-center gap-3"
               >
                 {t(locale, "hero.cta.primary")}

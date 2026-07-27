@@ -6,7 +6,7 @@ import { getServiceExtras } from "@/lib/service-extras";
 import { pageHead } from "@/lib/seo";
 import { localePath } from "@/lib/i18n";
 
-const SITE_URL = "https://apartner.lovable.app";
+import { BASE_URL } from "@/lib/config";
 
 export const Route = createFileRoute("/services/$slug")({
   loader: ({ params }) => {
@@ -25,7 +25,7 @@ export const Route = createFileRoute("/services/$slug")({
       title: s.title.en,
       description: s.metaDescription.en,
     });
-    const url = `${SITE_URL}${localePath("en", `/services/${params.slug}`)}`;
+    const url = `${BASE_URL}${localePath("en", `/services/${params.slug}`)}`;
     const scripts: { type: string; children: string }[] = [];
     const serviceLd: Record<string, unknown> = {
       "@context": "https://schema.org",
@@ -33,7 +33,7 @@ export const Route = createFileRoute("/services/$slug")({
       name: s.title.en,
       description: s.metaDescription.en,
       serviceType: s.title.en,
-      provider: { "@type": "Organization", name: "APARTNER.PRO", url: SITE_URL },
+      provider: { "@type": "Organization", name: "APARTNER.PRO", url: BASE_URL },
       areaServed: "Worldwide",
       url,
     };
@@ -68,8 +68,8 @@ export const Route = createFileRoute("/services/$slug")({
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         itemListElement: [
-          { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
-          { "@type": "ListItem", position: 2, name: "Services", item: `${SITE_URL}/services` },
+          { "@type": "ListItem", position: 1, name: "Home", item: `${BASE_URL}/` },
+          { "@type": "ListItem", position: 2, name: "Services", item: `${BASE_URL}/services` },
           { "@type": "ListItem", position: 3, name: s.title.en, item: url },
         ],
       }),

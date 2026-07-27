@@ -33,6 +33,7 @@ export function Header({ locale }: Props) {
         <div className="flex items-center gap-10">
           <Link
             to={localePath(locale, "/")}
+            preload="intent"
             className="font-extrabold tracking-tighter text-xl"
           >
             APARTNER<span className="text-accent">.</span>
@@ -42,6 +43,7 @@ export function Header({ locale }: Props) {
               <Link
                 key={n.key}
                 to={n.to}
+                preload="intent"
                 className="hover:text-foreground transition-colors"
                 activeProps={{ className: "text-foreground" }}
               >
@@ -71,6 +73,7 @@ export function Header({ locale }: Props) {
           </div>
           <Link
             to={localePath(locale, "/contact")}
+            preload="intent"
             className="hidden sm:inline-flex bg-foreground text-background text-xs font-bold px-5 py-2.5 rounded-sm hover:bg-accent transition-colors uppercase tracking-widest"
           >
             {t(locale, "nav.cta")}
@@ -91,6 +94,7 @@ export function Header({ locale }: Props) {
               <Link
                 key={n.key}
                 to={n.to}
+                preload="intent"
                 onClick={() => setOpen(false)}
                 className="text-base font-medium"
               >

@@ -66,3 +66,29 @@ export function pageHead(m: PageMeta) {
 
   return { meta, links, scripts };
 }
+
+export function generateBreadcrumb(locale: Locale, items: { name: string; path: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": items.map((item, index) => ({
+      "@type": "ListItem",
+      "position": index + 1,
+      "name": item.name,
+      "item": `${BASE_URL}${localePath(locale, item.path)}`
+    }))
+  };
+}
+
+export function generateServiceSchema(serviceData: { name: string; description: string; providerName?: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": serviceData.name,
+    "description": serviceData.description,
+    "provider": {
+      "@type": "Organization",
+      "name": serviceData.providerName || "APARTNER.PRO"
+    }
+  };
+}
